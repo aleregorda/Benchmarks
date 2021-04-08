@@ -1,0 +1,28 @@
+set term pdf size 10,3 enhanced
+set output 'Analytical.pdf'
+set multiplot
+#VELOCITA'
+set size 0.5, 1
+set origin 0.5, 0
+set xtics 0.2 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.5 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 x}'
+set ylabel offset 2,0 '{/Helvetic=10 Pressure}'
+plot[0:2][-2:2]\
+'Elementi.00001.txt' every ::363::400 u 2:9 t '{/Helvetic=10 Pressure}' w l lc 'red',\
+2*(1-x) t '{/Helvetic=10 Analytical}' w l dt 2 lc 'blue'
+#VELOCITA'
+set size 0.5, 1
+set origin 0.0, 0
+set xtics 0.1 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.025 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 y}'
+set ylabel offset 2,0 '{/Helvetic=10 Velocity}'
+plot[0:1][0:0.275]\
+'Nodi.00001.txt' every 41::11::861 u 3:4 t '{/Helvetic=10 Velocity}' w l lc 'red',\
+x*(1-x) t '{/Helvetic=10 Analytical}' w l dt 2 lc 'blue'
+unset multiplot
