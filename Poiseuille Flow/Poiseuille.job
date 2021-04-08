@@ -1,0 +1,30 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 12p FONT_ANNOT_PRIMARY 8p FONT_ANNOT_SECONDARY 8p FONT_LABEL 10p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
+gmt gmtset MAP_LABEL_OFFSET 0.2c
+gmt gmtset MAP_TITLE_OFFSET 0.5c
+
+gmt makecpt -Cimola -T-2/2/0.1 > Pressione.cpt
+gmt makecpt -Croma -T0/0.25/0.01 > Velocity.cpt
+gmt makecpt -Cbamako -T-2/2/0.1 -D -M > Divergence.cpt
+
+PS=Poiseuille.eps
+
+gmt psbasemap -R0/2/0/1 -JX8/4 -Bx2f0.1 -By1f0.1 -Bwsne -X1.5 -Y18 -K -P > $PS
+awk '{if(NR>2) print($2,$3,sqrt($4^2+$5^2))}' Nodi.00001.txt | gmt psxy -R -JX -O -Ss0.28 -CVelocity -K >> $PS
+awk '{if(NR>2) print($2,$3,sqrt($4^2+$5^2)/2,90.-(180./3.14)*atan2($5,$4),sqrt($4^2+$5^2)*2)}' Nodi.00001.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CVelocity -O -Dx4/-0.25/8/0.25h -Ba0.05f0.01:"Velocity": -K >> $PS
+
+gmt psbasemap -R0/2/0/1 -JX8/4 -Bx2f0.1 -By1f0.1 -Bwsne -X9 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$9)}' Elementi.00001.txt | gmt psxy -R -JX -O -Ss0.28 -Wwhite -CPressione -K >> $PS
+gmt psscale -CPressione -O -Dx4/-0.25/8/0.25h -Ba0.5f0.1:"Pressure": -K >> $PS
+
+gmt psbasemap -R0/2/0/1 -JX8/4 -Bx2f0.1 -By1f0.1 -Bwsne -X-9 -Y-6 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$12*1e08)}' Elementi.00001_no.txt | gmt psxy -R -JX -O -Ss0.28 -Wwhite -CDivergence -K >> $PS
+gmt psscale -CDivergence -O -Dx4/-0.25/8/0.25h -Ba0.5f0.1:"Divergence (x 10@+-8@+)": -K >> $PS
+
+gmt psbasemap -R0/2/0/1 -JX8/4 -Bx2f0.1 -By1f0.1 -Bwsne -X9 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$12*1e15)}' Elementi.00001.txt | gmt psxy -R -JX -O -Ss0.28 -Wwhite -CDivergence -K >> $PS
+gmt psscale -CDivergence -O -Dx4/-0.25/8/0.25h -Ba0.5f0.1:"Divergence (x 10@+-15@+)": >> $PS
+
+rm *.cpt gmt.*
