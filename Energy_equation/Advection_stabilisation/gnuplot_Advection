@@ -1,0 +1,15 @@
+set term pdf enhanced
+set output 'Advection.pdf'
+set pointsize 0.3
+set xtics 0.1 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.2 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 x}'
+set ylabel offset 2.5,0 '{/Helvetic=10 Temperature}'
+plot[0:1][-0.2:1.22]\
+'Initial' t '{/Helvetic=10 Initial}' pt 9 w lp,\
+'Analytical' t '{/Helvetic=10 Analytical}' pt 8 w lp,\
+'gamma=0' t '{/Helvetic=10 {/Symbol g}=0}' pt 5 w lp,\
+'gamma=0.045' t '{/Helvetic=10 {/Symbol g}=0.045}' pt 1 w lp
+#'gamma=0.258' t '{/Helvetic=10 {/Symbol g}=0.258}' pt 2 w lp

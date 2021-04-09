@@ -1,0 +1,18 @@
+set term pdf enhanced
+set output 'Thin_Layer_Initial.pdf'
+set xtics offset 0,0.5 font 'Helvetic,8'
+set xtics add (0.002)
+set xtics add (0.005)
+set xtics add (0.02)
+set xtics add (0.05)
+set ytics 0.5 offset 0.5,0 font 'Helvetic,8'
+set log x
+set grid
+set key bottom left
+set xlabel offset 0,1 '{/Helvetic=10 average element size}'
+set ylabel offset 2.5,0 '{/Helvetic=10 V_{rms}|_{t=0}}'
+plot[0.002:0.12][377:387]\
+'Initial' t '' lc black w l,\
+'Initial_1:1' t '{/Helvetic=10 aspect ratio 1:1}' lc 'red' ps 0.5 pt 5,\
+'Initial_2:1' t '{/Helvetic=10 aspect ratio 2:1}' lc 'blue' ps 0.5 pt 5,\
+'Initial_40' t '{/Helvetic=10 multiple of 40}' lc 'green' ps 0.5 pt 5 

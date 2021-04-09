@@ -1,0 +1,41 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 8p FONT_ANNOT_PRIMARY 4p FONT_ANNOT_SECONDARY 4p FONT_LABEL 6p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
+gmt gmtset MAP_LABEL_OFFSET 0.c
+gmt gmtset MAP_TITLE_OFFSET 0.2c
+
+gmt makecpt -Clapaz -T-1e-05/1e-05/2.5e-07 > Energy.cpt
+
+PS=Energy.eps
+
+gmt psbasemap -R0/1000/0/1500 -JX4/6 -Bx200f200+l"x" -By500f500+l"y" -BWSne+t"Shear heating (W/m@+3@+)" -X1.5 -Y12 -K -P > $PS
+awk '{if(NR>2) print($2/1e03,$3/1e03,$13)}' Elementi.00001.txt | gmt psxy -R -JX -O -Ss0.5 -CEnergy -K >> $PS
+awk '{if(NR>2) print($2/1e03,$3/1e03,sqrt($4^2+$5^2)/300,90.-(180./3.14)*atan2($5,$4),sqrt($4^2+$5^2)/100)}' Nodi.00001.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx4.3/3/6/0.2 -Ba5f5e-06 -K >> $PS
+
+gmt psbasemap -R0/1000/0/1500 -JX4/6 -Bx200f200+l"x" -By500f500+l"y" -BWSne+t"Adiabatic heating (W/m@+3@+)" -X6 -K -P -O >> $PS
+awk '{if(NR>2) print($2/1e03,$3/1e03,$14)}' Elementi.00001.txt | gmt psxy -R -JX -O -Ss0.5 -CEnergy -K >> $PS
+awk '{if(NR>2) print($2/1e03,$3/1e03,sqrt($4^2+$5^2)/300,90.-(180./3.14)*atan2($5,$4),sqrt($4^2+$5^2)/100)}' Nodi.00001.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx4.3/3/6/0.2 -Ba5f5e-06 -K >> $PS
+
+gmt psbasemap -R0/1000/0/1500 -JX4/6 -Bx200f200+l"x" -By500f500+l"y" -BWSne+t"Total heating (W/m@+3@+)" -X6 -K -P -O >> $PS
+awk '{if(NR>2) print($2/1e03,$3/1e03,$13+$14)}' Elementi.00001.txt | gmt psxy -R -JX -O -Ss0.5 -CEnergy -K >> $PS
+awk '{if(NR>2) print($2/1e03,$3/1e03,sqrt($4^2+$5^2)/300,90.-(180./3.14)*atan2($5,$4),sqrt($4^2+$5^2)/100)}' Nodi.00001.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx4.3/3/6/0.2 -Ba5f5e-06 -K >> $PS
+
+gmt psbasemap -R0/1000/0/1500 -JX4/6 -Bx200f200+l"x" -By500f500+l"y" -BWSne -X-12 -Y-7 -K -P -O >> $PS
+awk '{print($1/1e03,$2/1e03,$3)}' data.txt | gmt psxy -R -JX -O -Ss0.5 -CEnergy -K >> $PS
+awk '{print($1/1e03,$2/1e03,sqrt((-$5*9)^2+(-$6*1e9)^2)/90,90.-(180./3.14)*atan2(-$6,-$5),sqrt((-$5*1e9)^2+(-$6*1e9)^2)/30)}' data.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx4.3/3/6/0.2 -Ba5f5e-06 -K >> $PS
+
+gmt psbasemap -R0/1000/0/1500 -JX4/6 -Bx200f200+l"x" -By500f500+l"y" -BWSne -X6 -K -P -O >> $PS
+awk '{print($1/1e03,$2/1e03,$4)}' data.txt | gmt psxy -R -JX -O -Ss0.5 -CEnergy -K >> $PS
+awk '{print($1/1e03,$2/1e03,sqrt((-$5*9)^2+(-$6*1e9)^2)/90,90.-(180./3.14)*atan2(-$6,-$5),sqrt((-$5*1e9)^2+(-$6*1e9)^2)/30)}' data.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx4.3/3/6/0.2 -Ba5f5e-06 -K >> $PS
+
+gmt psbasemap -R0/1000/0/1500 -JX4/6 -Bx200f200+l"x" -By500f500+l"y" -BWSne -X6 -K -P -O >> $PS
+awk '{print($1/1e03,$2/1e03,$3+$4)}' data.txt | gmt psxy -R -JX -O -Ss0.5 -CEnergy -K >> $PS
+awk '{print($1/1e03,$2/1e03,sqrt((-$5*9)^2+(-$6*1e9)^2)/90,90.-(180./3.14)*atan2(-$6,-$5),sqrt((-$5*1e9)^2+(-$6*1e9)^2)/30)}' data.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx4.3/3/6/0.2 -Ba5f5e-06 >> $PS
+
+rm gmt.* *.cpt

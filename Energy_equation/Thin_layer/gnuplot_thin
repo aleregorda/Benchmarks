@@ -1,0 +1,11 @@
+set term pdf enhanced
+set output 'Thin_Layer.pdf'
+set xtics 0.002 offset 0,0.5 font 'Helvetic,8'
+set ytics 50 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Time}'
+set ylabel offset 2.5,0 '{/Helvetic=10 V_{rms}}'
+plot[0:0.02][200:600]\
+'Vrms_125x40' t '{/Helvetic=10 125x40}' lw 0.5 lc 'red' w l,\
+'Vrms_200x80' t '{/Helvetic=10 200x80}' lw 0.5 lc 'blue' w l

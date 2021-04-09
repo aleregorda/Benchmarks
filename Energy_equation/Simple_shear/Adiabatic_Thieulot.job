@@ -1,0 +1,22 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 8p FONT_ANNOT_PRIMARY 4p FONT_ANNOT_SECONDARY 4p FONT_LABEL 6p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
+gmt gmtset MAP_LABEL_OFFSET 0.c
+gmt gmtset MAP_TITLE_OFFSET 0.2c
+
+gmt makecpt -Clapaz -I -T0/1/0.05 > Energy.cpt
+gmt makecpt -Clajolla -T0/1/0.05 > Temp.cpt
+
+PS=Energy_Thieulot.eps
+
+gmt psbasemap -R0/1/0/1 -JX6/6 -Bx0.1f0.05 -By0.1f0.05 -BWSne+t"Temperature" -X1.5 -Y12 -K -P > $PS
+awk '{if(NR>2) print($2,$3,$11)}' Elementi.00002.txt | gmt psxy -R -JX -O -Ss0.08 -CTemp -K >> $PS
+#awk '{if(NR>2) print($2,$3,sqrt($4^2+$5^2),90.-(180./3.14)*atan2($5,$4),sqrt($4^2+$5^2))}' Nodi.00002.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CTemp -O -Dx6.3/3/6/0.2 -Ba0.1f0.05 -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX6/6 -Bx0.1f0.05 -By0.1f0.05 -BWSne+t"Shear heating" -X8 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$13)}' Elementi.00002.txt | gmt psxy -R -JX -O -Ss0.08 -CEnergy -K >> $PS
+#awk '{if(NR>2) print($2,$3,sqrt($4^2+$5^2),90.-(180./3.14)*atan2($5,$4),sqrt($4^2+$5^2))}' Nodi.00002.txt | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CEnergy -O -Dx6.3/3/6/0.2 -Ba0.1f0.05 >> $PS
+
+rm gmt.* *.cpt
