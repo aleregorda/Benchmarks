@@ -1,0 +1,19 @@
+set term pdf enhanced
+set output 'Falling.pdf'
+set pointsize 0.5
+set xtics 1 offset 0,0.5 font 'Helvetic,8'
+set ytics 2*10**-12 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 log_{10}({/Symbol h}_{b}/{/Symbol h}_{f})}'
+set ylabel offset 2.5,0 '{/Helvetic=10 v_{y}/(rho_{b}-rho_{f})}'
+plot[-6:6][-2*10**-12:-1.5*10**-11]\
+'Falling_3300' u 1:($2/100) t '{/Helvetic=10 rho_{b}=3300}' pt 1 w lp,\
+'Falling_3220' u 1:($2/20) t '{/Helvetic=10 rho_{b}=3220}' pt 2,\
+'Falling_6600' u 1:($2/3400) t '{/Helvetic=10 rho_{b}=6600}' pt 4,\
+'Falling_9900' u 1:($2/6700) t '{/Helvetic=10 rho_{b}=9900}' pt 6
+#plot[-6:6][-2*10**9:-15*10**9]\
+#'Falling_3300' u (-$1):((10**21)*$2/100) t '{/Helvetic=10 rho_{b}=3300}' pt 1 w lp,\
+#'Falling_3220' u (-$1):((10**21)*$2/20) t '{/Helvetic=10 rho_{b}=3220}' pt 2,\
+#'Falling_6600' u (-$1):((10**21)*$2/3400) t '{/Helvetic=10 rho_{b}=6600}' pt 4,\
+#'Falling_9900' u (-$1):((10**21)*$2/6700) t '{/Helvetic=10 rho_{b}=9900}' pt 6,\

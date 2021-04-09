@@ -1,0 +1,65 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 8p FONT_ANNOT_PRIMARY 4p FONT_ANNOT_SECONDARY 4p FONT_LABEL 6p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.05c
+gmt gmtset MAP_LABEL_OFFSET 0.1c
+gmt gmtset MAP_TITLE_OFFSET 0.2c
+
+gmt makecpt -Cdevon -I -T3200/3300/5 -D > Density.cpt
+
+PS=Block.eps
+
+gmt psbasemap -R0/500/0/500 -JX3/3 -Bx100f50+l"km" -By100f50+l"km" -BWsNe -X1.5 -Y18 -K -P > $PS
+awk '{if(NR>2610 && NR<5212 && $1!=0. && $2!=0.) print(($1-5000)/1e3,($2-5000)/1e3)}' ./Rho_3300/Visc_0/Solution.00001.vtu > xy.tmp
+awk '{if(NR>7717 && NR<10218) print($0)}' ./Rho_3300/Visc_0/Solution.00001.vtu > dens.tmp
+paste xy.tmp dens.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.13 -CDensity -K >> $PS
+awk '{if(NR==1) print(25,60,"a)")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,30,"t=0 Myr")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+#awk '{if(NR==1) print(50,25,"\265@-b@-=10@+21@+")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/500/0/500 -JX3/3 -Bx100f50+l"km" -By100f50+l"km" -BwsNE -X3.5 -K -P -O >> $PS
+awk '{if(NR>2610 && NR<5212 && $1!=0. && $2!=0.) print(($1-5000)/1e3,($2-5000)/1e3)}' ./Rho_3300/Visc_0/Solution.00001.vtu > xy.tmp
+awk '{if(NR>7717 && NR<10218) print($0)}' ./Rho_3300/Visc_-2/Solution.01912.vtu > dens.tmp
+paste xy.tmp dens.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.13 -CDensity -K >> $PS
+awk '{if(NR==1) print(25,60,"b)")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+#awk '{if(NR==1) print(55,25,"t=20 Myr")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,30,"@~\150@~@-b@-=10@+19@+")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/500/0/500 -JX3/3 -Bx100f50+l"km" -By100f50+l"km" -BWsne -X-3.5 -Y-3.5 -K -P -O >> $PS
+awk '{if(NR>2610 && NR<5212 && $1!=0. && $2!=0.) print(($1-5000)/1e3,($2-5000)/1e3)}' ./Rho_3300/Visc_0/Solution.00001.vtu > xy.tmp
+awk '{if(NR>7717 && NR<10218) print($0)}' ./Rho_3300/Visc_0/Solution.01912.vtu > dens.tmp
+paste xy.tmp dens.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.13 -CDensity -K >> $PS
+awk '{if(NR==1) print(25,60,"c)")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+#awk '{if(NR==1) print(55,25,"t=20 Myr")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,30,"@~\150@~@-b@-=10@+21@+")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/500/0/500 -JX3/3 -Bx100f50+l"km" -By100f50+l"km" -BwsnE -X3.5 -K -P -O >> $PS
+awk '{if(NR>2610 && NR<5212 && $1!=0. && $2!=0.) print(($1-5000)/1e3,($2-5000)/1e3)}' ./Rho_3300/Visc_0/Solution.00001.vtu > xy.tmp
+awk '{if(NR>7717 && NR<10218) print($0)}' ./Rho_3300/Visc_1/Solution.01912.vtu > dens.tmp
+paste xy.tmp dens.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.13 -CDensity -K >> $PS
+awk '{if(NR==1) print(25,60,"d)")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+#awk '{if(NR==1) print(55,50,"t=20 Myr")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,30,"@~\150@~@-b@-=10@+22@+")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/500/0/500 -JX3/3 -Bx100f50+l"km" -By100f50+l"km" -BWSne -X-3.5 -Y-3.5 -K -P -O >> $PS
+awk '{if(NR>2610 && NR<5212 && $1!=0. && $2!=0.) print(($1-5000)/1e3,($2-5000)/1e3)}' ./Rho_3300/Visc_0/Solution.00001.vtu > xy.tmp
+awk '{if(NR>7717 && NR<10218) print($0)}' ./Rho_3300/Visc_2/Solution.01912.vtu > dens.tmp
+paste xy.tmp dens.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.13 -CDensity -K >> $PS
+awk '{if(NR==1) print(25,60,"e)")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+#awk '{if(NR==1) print(55,50,"t=20 Myr")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,30,"@~\150@~@-b@-=10@+23@+")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/500/0/500 -JX3/3 -Bx100f50+l"km" -By100f50+l"km" -BwSnE -X3.5 -K -P -O >> $PS
+awk '{if(NR>2610 && NR<5212 && $1!=0. && $2!=0.) print(($1-5000)/1e3,($2-5000)/1e3)}' ./Rho_3300/Visc_0/Solution.00001.vtu > xy.tmp
+awk '{if(NR>7717 && NR<10218) print($0)}' ./Rho_3300/Visc_6/Solution.01912.vtu > dens.tmp
+paste xy.tmp dens.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.13 -CDensity -K >> $PS
+awk '{if(NR==1) print(25,60,"f)")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+#awk '{if(NR==1) print(55,50,"t=20 Myr")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,30,"@~\150@~@-b@-=10@+27@+")}' ./Rho_3300/Visc_0/Solution.00001.vtu | gmt pstext -O -R -JX >> $PS
+
+rm gmt.* *.tmp *.cpt
