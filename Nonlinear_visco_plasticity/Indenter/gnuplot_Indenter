@@ -1,0 +1,13 @@
+set term pdf enhanced
+set output 'Smooth_Rough.pdf'
+set xtics 0.1 offset 0,0.5 font 'Helvetic,8'
+set ytics 1 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 x|_{y=1}}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Pressure}'
+plot[0:1][-1:7]\
+'1.txt' t '{/Helvetic=10 1}' w l lc 'red' lw 1.5,\
+'4.txt' t '{/Helvetic=10 {/Symbol p}+1}' w l lc 'black' lw 1.5,\
+'Nodal_Pressure_Rough' t '{/Helvetic=10 Rough punch}' w l lc 'green' lw 1.5,\
+'Nodal_Pressure_Smooth' t '{/Helvetic=10 Smooth punch}' w l lc 'blue' lw 1.5

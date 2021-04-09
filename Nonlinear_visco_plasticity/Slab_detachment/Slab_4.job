@@ -1,0 +1,55 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 8p FONT_ANNOT_PRIMARY 4p FONT_ANNOT_SECONDARY 4p FONT_LABEL 6p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.05c
+gmt gmtset MAP_LABEL_OFFSET 0.1c
+gmt gmtset MAP_TITLE_OFFSET 0.2c
+
+gmt makecpt -Cvik -Q -I -T21/25/0.05 -D > Visc.cpt
+
+PS=Slab.eps
+
+gmt psbasemap -R0/1000/0/660 -JX5/3.3 -Bx100f50+l"km" -By100f50+l"km" -BWsNe -X1 -Y18 -K -P > $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print(($1-(3906.25/2))/1e3,($2-(3906.25/2))/1e3)}' ./Geometric/Solution.00001.vtu > xy.tmp
+awk '{if(NR>394776 && NR<460313) print($0)}' ./Geometric/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+#awk '{if(NR>132109 && NR<198159) print($1/1e3,$2/1e3)}' ./Geometric/Solution.00001.vtu > xy.tmp
+#awk '{if(NR>5 && NR<66055) print($1,$2)}' ./Geometric/Solution.00001.vtu > vxy.tmp
+#paste xy.tmp vxy.tmp > vel.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.035 -CVisc -K >> $PS
+#awk '{print($1,$2,sqrt($3^2+$4^2)/2,90.-(180./3.14)*atan2($4,$3),sqrt($3^2+$4^2)*2)}' vel.tmp | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CVisc -O -Dx2.5/-0.25/5/0.2h -Q -Ba1:"Viscosity (Pa \267 s)": -K >> $PS
+
+gmt psbasemap -R0/1000/0/660 -JX5/3.3 -Bx100f50+l"km" -By100f50+l"km" -BwsNE -X5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print(($1-(3906.25/2))/1e3,($2-(3906.25/2))/1e3)}' ./Geometric/Solution.00081.vtu > xy.tmp
+awk '{if(NR>394776 && NR<460313) print($0)}' ./Geometric/Solution.00081.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+#awk '{if(NR>132109 && NR<198159) print($1/1e3,$2/1e3)}' ./Geometric/Solution.00081.vtu > xy.tmp
+#awk '{if(NR>5 && NR<66055) print($1,$2)}' ./Geometric/Solution.00081.vtu > vxy.tmp
+#paste xy.tmp vxy.tmp > vel.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.035 -CVisc -K >> $PS
+#awk '{print($1,$2,sqrt($3^2+$4^2)/2,90.-(180./3.14)*atan2($4,$3),sqrt($3^2+$4^2)*2)}' vel.tmp | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CVisc -O -Dx2.5/-0.25/5/0.2h -Q -Ba1:"Viscosity (Pa \267 s)": -K >> $PS
+
+gmt psbasemap -R0/1000/0/660 -JX5/3.3 -Bx100f50+l"km" -By100f50+l"km" -BWsNe -X-5.5 -Y-5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print(($1-(3906.25/2))/1e3,($2-(3906.25/2))/1e3)}' ./Geometric/Solution.00141.vtu > xy.tmp
+awk '{if(NR>394776 && NR<460313) print($0)}' ./Geometric/Solution.00141.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+#awk '{if(NR>132109 && NR<198159) print($1/1e3,$2/1e3)}' ./Geometric/Solution.00141.vtu > xy.tmp
+#awk '{if(NR>5 && NR<66055) print($1,$2)}' ./Geometric/Solution.00141.vtu > vxy.tmp
+#paste xy.tmp vxy.tmp > vel.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.035 -CVisc -K >> $PS
+#awk '{print($1,$2,sqrt($3^2+$4^2)/2,90.-(180./3.14)*atan2($4,$3),sqrt($3^2+$4^2)*2)}' vel.tmp | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CVisc -O -Dx2.5/-0.25/5/0.2h -Q -Ba1:"Viscosity (Pa \267 s)": -K >> $PS
+
+gmt psbasemap -R0/1000/0/660 -JX5/3.3 -Bx100f50+l"km" -By100f50+l"km" -BwsNE -X5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print(($1-(3906.25/2))/1e3,($2-(3906.25/2))/1e3)}' ./Geometric/Solution.00201.vtu > xy.tmp
+awk '{if(NR>394776 && NR<460313) print($0)}' ./Geometric/Solution.00201.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+#awk '{if(NR>132109 && NR<198159) print($1/1e3,$2/1e3)}' ./Geometric/Solution.00201.vtu > xy.tmp
+#awk '{if(NR>5 && NR<66055) print($1,$2)}' ./Geometric/Solution.00201.vtu > vxy.tmp
+#paste xy.tmp vxy.tmp > vel.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.035 -CVisc -K >> $PS
+#awk '{print($1,$2,sqrt($3^2+$4^2)/2,90.-(180./3.14)*atan2($4,$3),sqrt($3^2+$4^2)*2)}' vel.tmp | gmt psxy -R -JX -O -SV+e+gblack -N -K >> $PS
+gmt psscale -CVisc -O -Dx2.5/-0.25/5/0.2h -Q -Ba1:"Viscosity (Pa \267 s)": >> $PS
+
+rm *.cpt gmt.*

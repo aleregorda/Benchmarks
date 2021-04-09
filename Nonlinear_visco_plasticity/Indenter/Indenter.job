@@ -1,0 +1,78 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 8p FONT_ANNOT_PRIMARY 4p FONT_ANNOT_SECONDARY 4p FONT_LABEL 6p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.05c
+gmt gmtset MAP_LABEL_OFFSET 0.1c
+gmt gmtset MAP_TITLE_OFFSET 0.2c
+
+gmt makecpt -Cvik -I -Q -T-3/3/0.1 -D > Visc.cpt
+gmt makecpt -Cdavos -D -T0/140 > Strain.cpt
+gmt makecpt -Cimola -D -T0/5/0.1> Pressure.cpt
+gmt makecpt -Croma -D -I -T0/1.05/0.01> Velocity.cpt
+
+PS=Indenter.eps
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BWsNe+t"Rough punch" -X1.5 -Y18 -K -P > $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print($1-3.9e-3,$2-3.9e-3)}' ./Rough/Solution.00001.vtu > xy.tmp
+awk '{if(NR>394776 && NR<460313) print($0)}' ./Rough/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CVisc -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CVisc -O -Q -Dx2.5/-0.1/5/0.2h -Ba1f1:"Viscosity": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BwsNE+t"Smooth punch" -X5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print($1-3.9e-3,$2-3.9e-3)}' ./Smooth/Solution.00001.vtu > xy.tmp
+awk '{if(NR>394776 && NR<460313) print($0)}' ./Smooth/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CVisc -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CVisc -O -Q -Dx2.5/-0.1/5/0.2h -Ba1f1:"Viscosity": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BWsne -X-5.5 -Y-2.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print($1-3.9e-3,$2-3.9e-3)}' ./Rough/Solution.00001.vtu > xy.tmp
+awk '{if(NR>460314 && NR<525851) print($0)}' ./Rough/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CStrain -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CStrain -O -Dx2.5/-0.1/5/0.2h -Ba20f10:"Strain rate": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BwsnE -X5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print($1-3.9e-3,$2-3.9e-3)}' ./Smooth/Solution.00001.vtu > xy.tmp
+awk '{if(NR>460314 && NR<525851) print($0)}' ./Smooth/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CStrain -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CStrain -O -Dx2.5/-0.1/5/0.2h -Ba20f10:"Strain rate": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BWsne -X-5.5 -Y-2.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159) print($1,$2)}' ./Rough/Solution.00001.vtu > xy.tmp
+awk '{if(NR>5 && NR<66055) print(sqrt($1^2+$2^2))}' ./Rough/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CVelocity -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CVelocity -O -Dx2.5/-0.1/5/0.2h -Ba0.2f0.1:"Velocity": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BwsnE -X5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159) print($1,$2)}' ./Smooth/Solution.00001.vtu > xy.tmp
+awk '{if(NR>5 && NR<66055) print(sqrt($1^2+$2^2))}' ./Smooth/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CVelocity -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CVelocity -O -Dx2.5/-0.1/5/0.2h -Ba0.2f0.1:"Velocity": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BWsne -X-5.5 -Y-2.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print($1-3.9e-3,$2-3.9e-3)}' ./Rough/Solution.00001.vtu > xy.tmp
+awk '{if(NR>263700 && NR<329237) print($0)}' ./Rough/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CPressure -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CPressure -O -Dx2.5/-0.1/5/0.2h -Ba1f0.5:"Pressure": -K >> $PS
+
+gmt psbasemap -R0/1/0.75/1 -JX5/1.25 -Bx0.1f0.1 -By0.1f0.1 -BwsnE -X5.5 -K -P -O >> $PS
+awk '{if(NR>132109 && NR<198159 && $1!=0. && $2!=0.) print($1-3.9e-3,$2-3.9e-3)}' ./Smooth/Solution.00001.vtu > xy.tmp
+awk '{if(NR>263700 && NR<329237) print($0)}' ./Smooth/Solution.00001.vtu > visc.tmp
+paste xy.tmp visc.tmp > fig.tmp
+gmt psxy fig.tmp -R -JX -O -Ss0.04 -CPressure -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CPressure -O -Dx2.5/-0.1/5/0.2h -Ba1f0.5:"Pressure": >> $PS
+
+rm gmt.* *.tmp *.cpt

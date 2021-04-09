@@ -1,0 +1,33 @@
+set term pdf size 10,3 enhanced
+set output '0°.pdf'
+set title '{/Helvetic=12 Angle of Friction=0°}'
+set multiplot
+#ROUGH
+set size 0.5, 1
+set origin 0.0, 0
+set pointsize 0.3
+set title '{/Helvetic=12 Rough}'
+set xtics 0.1 offset 0,0.5 font 'Helvetic,8'
+set ytics 1 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 x|_{y=1}}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Pressure}'
+plot[0:1][-1:7]\
+'Elemental_Pressure_Rough' t '{/Helvetic=10 Elemental}' w l,\
+'Nodal_Pressure_Rough' t '{/Helvetic=10 Nodal}' w l
+#SMOOTH
+set size 0.5, 1
+set origin 0.5, 0
+set pointsize 0.3
+set title '{/Helvetic=12 Smooth}'
+set xtics 0.1 offset 0,0.5 font 'Helvetic,8'
+set ytics 1 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 x|_{y=1}}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Pressure}'
+plot[0:1][-1:7]\
+'Elemental_Pressure_Smooth' t '{/Helvetic=10 Elemental}' w l,\
+'Nodal_Pressure_Smooth' t '{/Helvetic=10 Nodal}' w l
+unset multiplot
