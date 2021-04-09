@@ -1,0 +1,12 @@
+set term pdf enhanced
+set output 'Kaus_5kyr.pdf'
+set tics
+set grid
+set xlabel 'Time (Ma)'
+set ylabel 'Deviation (m)'
+plot[0:0.5][-300:0]\
+'16_markers' with lines,\
+'25_markers' with lines,\
+'36_markers' with lines,\
+'49_markers' with lines,\
+'25_markers_random' with lines

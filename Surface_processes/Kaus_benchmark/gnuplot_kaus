@@ -1,0 +1,15 @@
+set term pdf enhanced
+set output 'Kaus.pdf'
+set tics
+set grid
+set xlabel 'Time (Ma)'
+set ylabel 'Deviation (m)'
+plot[0:0.5][-300:0]\
+'dt=2500' with lines,\
+'dt=4000' with lines,\
+'dt=4400' with lines,\
+'dt=4400_Stab' with lines,\
+'dt=10000_Stab' with lines,\
+'dt=16000_Stab' with lines,\
+'dt=20000_Stab' with lines,\
+'dt=50000_Stab' with lines

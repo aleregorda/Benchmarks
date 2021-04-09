@@ -1,0 +1,18 @@
+set term pdf enhanced
+set output 'Kaus_random.pdf'
+set pointsize 0.3
+set title '{/Helvetic=12 Free Surface Stabilisation'
+set xtics 0.05 offset 0,0.5 font 'Helvetic,8'
+set ytics 25 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Time (Myr)}'
+set ylabel offset 2,0 '{/Helvetic=10 Deviation (m)}'
+plot[0:0.5][-300:0]\
+'dt=2500_R' t '{/Helvetic=10 dt=2.5 kyr}' w l,\
+'dt=4200_R' t '{/Helvetic=10 dt=4.2 kyr}' w l,\
+'dt=4200_Stab_R' t '{/Helvetic=10 dt=4.2 kyr (stab.)}' w l,\
+'dt=10000_Stab_R' t '{/Helvetic=10 dt=10 kyr (stab.)}' w l,\
+'dt=16000_Stab_R' t '{/Helvetic=10 dt=16 kyr (stab.)}' w l,\
+'dt=20000_Stab_R' t '{/Helvetic=10 dt=20 kyr (stab.)}' w l,\
+'dt=50000_Stab_R' t '{/Helvetic=10 dt=50 kyr (stab.)}' w l
