@@ -1,0 +1,9 @@
+BC=OS
+MEDIA=Arithmetic
+
+awk '{print($1)}' Mesh_Size > mesh.tmp
+awk '{print($0)}' 2D_Sphere > sphere.tmp
+
+paste mesh.tmp sphere.tmp > $BC.$MEDIA
+
+rm *.tmp
