@@ -1,0 +1,32 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 12p FONT_ANNOT_PRIMARY 8p FONT_ANNOT_SECONDARY 8p FONT_LABEL 10p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
+gmt gmtset MAP_LABEL_OFFSET 0.2c
+gmt gmtset MAP_TITLE_OFFSET 0.5c
+
+gmt makecpt -Chawaii -T0/7/0.1 -I > water.cpt
+
+PS=Hydration.eps
+
+gmt psbasemap -R0/300/0/300 -JX5/5 -Bx100f50+l"km" -By100f50+l"km" -BWSne+t"Bound water" -X2 -Y18 -K -P > $PS
+awk '{if(NR>2 && $8!=0.) print($2/1e3,$3/1e3,$8)}' ./Marcatori.00101.txt | gmt psxy -R -JX -O -Ss0.01 -Cwater -K >> $PS
+awk '{if(NR==1) print(25,50,"a)")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(55,25,"t=0.5 Myr")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/300/0/300 -JX5/5 -Bx100f50+l"km" -By100f50+l"km" -BwSnE+t"Free water" -X5.5 -K -P -O >> $PS
+awk '{if(NR>2 && $9!=0.) print($2/1e3,$3/1e3,$9)}' ./Marcatori.00101.txt | gmt psxy -R -JX -O -Sc0.01 -Cwater -K >> $PS
+awk '{if(NR==1) print(25,50,"b)")}' ./Marcatori.00151.txt | gmt pstext -O -R -K -JX >> $PS
+awk '{if(NR==1) print(55,25,"t=0.5 Myr")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/300/0/300 -JX5/5 -Bx100f50 -By100f50+l"km" -BWNse -X-5.5 -Y-6.6 -K -P -O >> $PS
+awk '{if(NR>2 && $8!=0.) print($2/1e3,$3/1e3,$8)}' ./Marcatori.00251.txt | gmt psxy -R -JX -O -Ss0.01 -Cwater -K >> $PS
+awk '{if(NR==1) print(25,50,"c)")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(60,25,"t=1.25 Myr")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+
+gmt psbasemap -R0/300/0/300 -JX5/5 -Bx100f50 -By100f50+l"km" -BwNsE -X5.5 -K -P -O >> $PS
+awk '{if(NR>2 && $9!=0.) print($2/1e3,$3/1e3,$9)}' ./Marcatori.00251.txt | gmt psxy -R -JX -O -Sc0.01 -Cwater -K >> $PS
+awk '{if(NR==1) print(25,50,"d)")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+awk '{if(NR==1) print(60,25,"t=1.25 Myr")}' ./Marcatori.00151.txt | gmt pstext -K -O -R -JX >> $PS
+gmt psscale -Cwater -O -Dx-0.25/-0.5/10.5/0.3h -Ba1f0.5+l"Water content (wt.%)" >> $PS
+
+rm gmt.*

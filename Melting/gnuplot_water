@@ -1,0 +1,32 @@
+set term pdf size 10,3 enhanced
+set output 'Water.pdf'
+set multiplot
+#BULK
+set size 0.5, 1
+set origin 0.0, 0.0
+set xtics 0.05 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.05 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top left
+set xlabel offset 0,1 '{/Helvetic=10 Bulk water (wt.%)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Melt fraction}'
+plot[0:0.25][0:0.25]\
+'1200' u 2:1 t '{/Helvetic=10 1200 °C}' w l,\
+'1250' u 2:1 t '{/Helvetic=10 1250 °C}' w l,\
+'1300' u 2:1 t '{/Helvetic=10 1300 °C}' w l,\
+'1350' u 2:1 t '{/Helvetic=10 1350 °C}' w l
+#MELT WATER
+set size 0.5, 1
+set origin 0.5, 0.0
+set xtics 0.5 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.05 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Water in the melt (wt.%)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Melt fraction}'
+plot[0:4.5][0:0.2]\
+'1200' u 3:1 t '{/Helvetic=10 1200 °C}' w l,\
+'1250' u 3:1 t '{/Helvetic=10 1250 °C}' w l,\
+'1300' u 3:1 t '{/Helvetic=10 1300 °C}' w l,\
+'1350' u 3:1 t '{/Helvetic=10 1350 °C}' w l
+unset multiplot

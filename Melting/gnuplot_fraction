@@ -1,0 +1,38 @@
+set term pdf size 10,3 enhanced
+set output 'Fraction.pdf'
+set multiplot
+#1 GPa
+set title '{/Helvetic=10 1 GPa}'
+set size 0.5, 1
+set origin 0.0, 0.0
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.05 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top left
+set xlabel offset 0,1 '{/Helvetic=10 Temperature (°C)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Melt fraction}'
+plot[1000:1500][0:0.4]\
+'1GPa_0' u 1:3 t '{/Helvetic=10 0 wt.%}' w l,\
+'1GPa_02' u 1:3 t '{/Helvetic=10 0.02 wt.%}' w l,\
+'1GPa_05' u 1:3 t '{/Helvetic=10 0.05 wt.%}' w l,\
+'1GPa_1' u 1:3 t '{/Helvetic=10 0.1 wt.%}' w l,\
+'1GPa_2' u 1:3 t '{/Helvetic=10 0.2 wt.%}' w l,\
+'1GPa_3' u 1:3 t '{/Helvetic=10 0.3 wt.%}' w l
+#3 GPa
+set title '{/Helvetic=10 3 GPa}'
+set size 0.5, 1
+set origin 0.5, 0.0
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.05 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top left
+set xlabel offset 0,1 '{/Helvetic=10 Temperature (°C)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Melt fraction}'
+plot[1000:1500][0:0.4]\
+'3GPa_0' u 1:3 t '{/Helvetic=10 0 wt.%}' w l,\
+'3GPa_02' u 1:3 t '{/Helvetic=10 0.02 wt.%}' w l,\
+'3GPa_05' u 1:3 t '{/Helvetic=10 0.05 wt.%}' w l,\
+'3GPa_1' u 1:3 t '{/Helvetic=10 0.1 wt.%}' w l,\
+'3GPa_2' u 1:3 t '{/Helvetic=10 0.2 wt.%}' w l,\
+'3GPa_3' u 1:3 t '{/Helvetic=10 0.3 wt.%}' w l
+unset multiplot
