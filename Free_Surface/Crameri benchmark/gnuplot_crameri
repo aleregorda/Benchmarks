@@ -1,0 +1,39 @@
+set term pdf size 6,3 enhanced
+set output 'Crameri.pdf'
+set pointsize 0.3
+set multiplot
+#GLOBALE
+set size 0.65, 1
+set origin 0.0, 0.0
+set xtics 10 offset 0,0.5 font 'Helvetic,8'
+set xtics 10 offset 0,0.5 font 'Helvetic,8' add ('t_{rlx}' 14.825)
+set ytics 1 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Time (kyr)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Max topography (km)}'
+plot[0:100][0:7]\
+'st_18' t '{/Helvetic=8 sticky air=10^{18}}' w l,\
+'st_19'  t '{/Helvetic=8 sticky air=10^{19}}' w l,\
+'st_20'  t '{/Helvetic=8 sticky air=10^{20}}' w l,\
+'Free_Surface'  t '{/Helvetic=8 free surface' w l,\
+'UNDERWORLD_fs.dat'  t '{/Helvetic=8 UNDERWORLD_{fs}}' w l,\
+'SULEC_fs.dat'  t '{/Helvetic=8 SULEC_{fs}}' w l,\
+'UNDERWORLD_fs.dat' u 1:((7)*exp(-$1*(1e3*365*24*3600)*0.2139e-11)) t '{/Helvetic=8 Analytical}' lc 'black' w l
+reset
+#ZOOM
+set size 0.4, 1
+set origin 0.6, 0.0
+set xtics 1 offset 0,0.5 font 'Helvetic,8'
+set xtics 1 offset 0,0.5 font 'Helvetic,8' add ('t_{rlx}' 14.825)
+set ytics 0.1 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right samplen 2
+set xlabel offset 0,1 '{/Helvetic=10 Time (kyr)}'
+plot[14:16][2.4:2.8]\
+'st_18' t '{/Helvetic=8 sticky air=10^{18}}' w l lt 1,\
+'Free_Surface'  t '{/Helvetic=8 free surface' w l lt 4,\
+'UNDERWORLD_fs.dat'  t '{/Helvetic=8 UNDERWORLD_{fs}}' w l lt 5,\
+'SULEC_fs.dat'  t '{/Helvetic=8 SULEC_{fs}}' w l lt 6,\
+'UNDERWORLD_fs.dat' u 1:((7)*exp(-$1*(1e3*365*24*3600)*0.2139e-11)) t '{/Helvetic=8 Analytical}' lc 'black' w l
+unset multiplot
