@@ -1,0 +1,18 @@
+set term pdf enhanced
+set output 'Subduction.pdf'
+set xtics 10 offset 0,0.5 font 'Helvetic,6'
+set ytics 50 offset 0.5,0 font 'Helvetic,6'
+set grid
+set key top right spacing 0.7 height -0.8 samplen 2
+set xlabel offset 0,1 '{/Helvetic=8 Time (Myr)}'
+set ylabel offset 1.5,0 '{/Helvetic=8 Slab tip depth (km)}'
+plot[0:100][700:200]\
+'Slab_Tip.arm_fs.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Free surface, harmonic}' lc 'red' w l,\
+'Slab_Tip.geo_fs.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Free surface, geometric}' lc 'green' w l,\
+'Slab_Tip.ari_fs.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Free surface, arithmetic}' lc 'blue' w l,\
+'Slab_Tip.arm_st.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Sticky air=10^{19}, harmonic}' dt 2 lc '#800000' w l,\
+'Slab_Tip.geo_st.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Sticky air=10^{19}, geometric}' dt 2 lc '#008000' w l,\
+'Slab_Tip.ari_st.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Sticky air=10^{19}, arithmetic}' dt 2 lc '#000080' w l,\
+'Slab_Tip.arm_st21.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Sticky air=10^{21}, harmonic}' dt 3 lc '#800000' w l,\
+'Slab_Tip.geo_st21.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Sticky air=10^{21}, geometric}' dt 3 lc '#008000' w l,\
+'Slab_Tip.ari_st21.txt' u 1:(700-($2/1e3)) t '{/Helvetic=6 Sticky air=10^{21}, arithmetic}' dt 3 lc '#000080' w l
