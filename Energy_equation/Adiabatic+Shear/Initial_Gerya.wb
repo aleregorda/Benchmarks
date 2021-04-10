@@ -1,0 +1,12 @@
+{
+  "version":"0.3",
+  "coordinate system":{"model":"cartesian"},
+  "cross section":[[0,0],[100,0]],
+  "features":
+  [
+
+    {"model":"continental plate", "name":"upper mantle", "coordinates":[[0e3,-1e3],[1000e3,-1e3],[1000e3,1e3],[0e3,1e3]],
+     "temperature models":[{"model":"linear", "max depth":1500e3, "top temperature":1300, "bottom temperature":1300}],
+     "composition models":[{"model":"uniform", "compositions":[1], "max depth":1500e3}]}
+  ]
+}
