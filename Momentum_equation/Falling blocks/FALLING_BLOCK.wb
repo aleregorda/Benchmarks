@@ -1,0 +1,17 @@
+{
+  "version":"0.3",
+  "coordinate system":{"model":"cartesian"},
+  "cross section":[[0,0],[100,0]],
+  "features":
+  [
+
+    {"model":"continental plate", "name":"continental plate", "coordinates":[[0e3,-1e3],[500e3,-1e3],[500e3,1e3],[0e3,1e3]],
+     "temperature models":[{"model":"linear", "max depth":500e3, "top temperature":273.15, "bottom temperature":1600}],
+     "composition models":[{"model":"uniform", "compositions":[1], "max depth":500e3}]},
+
+    {"model":"mantle layer", "name":"upper mantle", "coordinates":[[200e3,-1e3],[300e3,-1e3],[300e3,1e3],[200e3,1e3]],
+     "temperature models":[{"model":"adiabatic", "min depth":50e3, "max depth":150e3}],
+     "composition models":[{"model":"uniform", "compositions":[2], "min depth":50e3, "max depth":150e3}]}
+
+  ]
+}
