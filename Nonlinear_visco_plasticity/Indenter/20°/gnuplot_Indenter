@@ -1,0 +1,14 @@
+set term pdf enhanced
+set output '20°.pdf'
+set title '{/Helvetic=12 Angle of Friction=20°}'
+set pointsize 0.3
+set title '{/Helvetic=12 Rough}'
+set xtics 0.1 offset 0,0.5 font 'Helvetic,8'
+set ytics 2 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Pressure}'
+set ylabel offset 1.5,0 '{/Helvetic=10 x|_{y=1}}'
+plot[0:1][-1:17]\
+'Elemental Pressure' t '{/Helvetic=10 Elemental}' w l,\
+'Nodal Pressure' t '{/Helvetic=10 Nodal}' w l
