@@ -1,0 +1,50 @@
+gmt gmtset PS_MEDIA a3
+gmt gmtset FONT_TITLE 18p FONT_ANNOT_PRIMARY 12p FONT_ANNOT_SECONDARY 8p FONT_LABEL 16p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
+gmt gmtset MAP_LABEL_OFFSET 0.4c
+gmt gmtset MAP_TITLE_OFFSET 0.5c
+
+PS=melt-water
+
+gmt psbasemap -R0/0.25/0/0.25 -JX10/10 -Bx0.05f0.05g0.05+l"Bulk Water" -By0.05f0.05g0.05+l"Melt Fraction" -BWSne -X2 -Y28 -K -P > $PS.ps
+awk '{print($2,$1)}' 1200 | gmt psxy -R -JX -O -Sc0.1 -Gblue -K >> $PS.ps
+awk '{print($2,$1)}' 1250 | gmt psxy -R -JX -O -Sc0.1 -Ggreen -K >> $PS.ps
+awk '{print($2,$1)}' 1300 | gmt psxy -R -JX -O -Sc0.1 -Gred -K >> $PS.ps
+awk '{print($2,$1)}' 1350 | gmt psxy -R -JX -O -Sc0.1 -Glightblue -K >> $PS.ps
+awk '{if(NR==1) print(0.025,0.225,"1.5 GPa")}' ./Benchmark_Melt/1GPa | gmt pstext -K -O -R -JX >> $PS.ps
+
+gmt psbasemap -R0/5/0/0.25 -JX10/10 -Bx1f0.5g1+l"Water in the melt" -By0.1f0.05g0.05+l"Melt Fraction" -BwSnE -X11 -K -P -O >> $PS.ps
+awk '{print($3,$1)}' 1200 | gmt psxy -R -JX -O -Sc0.1 -Gblue -K >> $PS.ps
+awk '{print($3,$1)}' 1250 | gmt psxy -R -JX -O -Sc0.1 -Ggreen -K >> $PS.ps
+awk '{print($3,$1)}' 1300 | gmt psxy -R -JX -O -Sc0.1 -Gred -K >> $PS.ps
+awk '{print($3,$1)}' 1350 | gmt psxy -R -JX -O -Sc0.1 -Glightblue -K >> $PS.ps
+awk '{if(NR==1) print(0.5,0.225,"1.5 GPa")}' ./Benchmark_Melt/1GPa | gmt pstext -O -R -JX >> $PS.ps
+
+rm gmt.*
+
+exit
+
+PS=melt
+
+gmt psbasemap -R800/1600/0/0.5 -JX10/10 -Bx200f200g200+l"Temperature" -By0.1f0.1g0.1+l"Melt Fraction" -BWNse -X2 -Y28 -K -P > $PS.ps
+awk '{if($4==0 && $3!=0) print($1,$3)}' ./Benchmark_Melt/1GPaAll | gmt psxy -R -JX -O -Sc0.1 -Gblue -K >> $PS.ps
+awk '{if($4==0.02 && $3!=0) print($1,$3)}' ./Benchmark_Melt/1GPaAll | gmt psxy -R -JX -O -Sc0.1 -Ggreen -K >> $PS.ps
+awk '{if($4==0.05 && $3!=0) print($1,$3)}' ./Benchmark_Melt/1GPaAll | gmt psxy -R -JX -O -Sc0.1 -Gred -K >> $PS.ps
+awk '{if($4==0.1 && $3!=0) print($1,$3)}' ./Benchmark_Melt/1GPaAll | gmt psxy -R -JX -O -Sc0.1 -Glightblue -K >> $PS.ps
+awk '{if($4==0.3 && $3!=0) print($1,$3)}' ./Benchmark_Melt/1GPaAll | gmt psxy -R -JX -O -Sc0.1 -Gpurple -K >> $PS.ps
+awk '{if(NR==1) print(900,0.475,"1 GPa")}' ./Benchmark_Melt/1GPa | gmt pstext -K -O -R -JX >> $PS.ps
+
+gmt psbasemap -R800/1600/0/0.5 -JX10/10 -Bx200f200g200+l"Temperature" -By0.1f0.1g0.1+l"Melt Fraction" -BwNsE -X11 -K -P -O >> $PS.ps
+awk '{if($3!=0) print($1,$3)}' ./Benchmark_Melt/1GPa | gmt psxy -R -JX -O -Sc0.1 -Gblue -K >> $PS.ps
+awk '{if($3!=0) print($1,$3)}' ./Benchmark_Melt/3GPa | gmt psxy -R -JX -O -Sc0.1 -Ggreen -K >> $PS.ps
+awk '{if(NR==1) print(900,0.475,"Dry melting")}' ./Benchmark_Melt/1GPa | gmt pstext -K -O -R -JX >> $PS.ps
+
+gmt psbasemap -R800/1600/0/0.5 -JX10/10 -Bx200f200g200+l"Temperature" -By0.1f0.1g0.1+l"Melt Fraction" -BWSne -X-11 -Y-11 -K -P -O >> $PS.ps
+awk '{if($3!=0) print($1,$3)}' ./Benchmark_Melt/1GPa1 | gmt psxy -R -JX -O -Sc0.1 -Gblue -K >> $PS.ps
+awk '{if($3!=0) print($1,$3)}' ./Benchmark_Melt/3GPa1 | gmt psxy -R -JX -O -Sc0.1 -Ggreen -K >> $PS.ps
+awk '{if(NR==1) print(950,0.475,"0.1 wt% bulk water")}' ./Benchmark_Melt/1GPa | gmt pstext -K -O -R -JX >> $PS.ps
+
+gmt psbasemap -R800/1600/0/0.5 -JX10/10 -Bx200f200g200+l"Temperature" -By0.1f0.1g0.1+l"Melt Fraction" -BwSnE -X11 -K -P -O >> $PS.ps
+awk '{if($3!=0) print($1,$3)}' ./Benchmark_Melt/1GPa5 | gmt psxy -R -JX -O -Sc0.1 -Gblue -K >> $PS.ps
+awk '{if($3!=0) print($1,$3)}' ./Benchmark_Melt/3GPa5 | gmt psxy -R -JX -O -Sc0.1 -Ggreen -K >> $PS.ps
+awk '{if(NR==1) print(950,0.475,"0.5 wt% bulk water")}' ./Benchmark_Melt/1GPa | gmt pstext -O -R -JX >> $PS.ps
