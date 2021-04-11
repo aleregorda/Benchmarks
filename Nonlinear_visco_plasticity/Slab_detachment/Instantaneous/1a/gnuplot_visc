@@ -1,0 +1,35 @@
+set term pdf size 10,3 enhanced
+set output 'Visc.pdf'
+set multiplot
+#PROFILE X
+set log y
+set size 0.5, 1
+set origin 0.0, 0.0
+set pointsize 0.3
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics offset 0,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 x (km)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Viscosity (Pa s)}'
+plot[0:1000][1e20:1e24]\
+'x_profile032' u 1:2 t '{/Helvetic=10 32x32}' w l,\
+'x_profile048' u 1:2 t '{/Helvetic=10 48x48}' w l,\
+'x_profile064' u 1:2 t '{/Helvetic=10 64x64}' w l,\
+'x_profile128' u 1:2 t '{/Helvetic=10 128x128}' w l,\
+'x_profile256' u 1:2 t '{/Helvetic=10 256x256}' w l
+#PROFILE Y
+set size 0.5, 1
+set origin 0.5, 0.0
+set pointsize 0.3
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 y (km)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 Viscosity (Pa s)}'
+plot[0:660][1e20:1e26]\
+'y_profile032' u 1:2 t '{/Helvetic=10 32x32}' w l,\
+'y_profile048' u 1:2 t '{/Helvetic=10 48x48}' w l,\
+'y_profile064' u 1:2 t '{/Helvetic=10 64x64}' w l,\
+'y_profile128' u 1:2 t '{/Helvetic=10 128x128}' w l,\
+'y_profile256' u 1:2 t '{/Helvetic=10 256x256}' w l
+unset multiplot

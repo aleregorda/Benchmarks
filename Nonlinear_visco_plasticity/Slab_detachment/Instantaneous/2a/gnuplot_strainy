@@ -1,0 +1,49 @@
+set term pdf size 10,3 enhanced
+set output 'Strain_y.pdf'
+set multiplot
+#EXX
+set size 0.33, 1
+set origin 0.0, 0.0
+set pointsize 0.3
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics 2e-16 offset 0,0 font 'Helvetic,8'
+set grid
+set key bottom left
+set xlabel offset 0,1 '{/Helvetic=10 y (km)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 exx (1/s)}'
+plot[0:660][-1.4e-15:10e-16]\
+'y_profile032' u 1:3 t '{/Helvetic=10 32x32}' w l,\
+'y_profile048' u 1:3 t '{/Helvetic=10 48x48}' w l,\
+'y_profile064' u 1:3 t '{/Helvetic=10 64x64}' w l,\
+'y_profile128' u 1:3 t '{/Helvetic=10 128x128}' w l,\
+'y_profile256' u 1:3 t '{/Helvetic=10 256x256}' w l
+#EYY
+set size 0.33, 1
+set origin 0.33, 0.0
+set pointsize 0.3
+set grid
+set key top left
+set xlabel offset 0,1 '{/Helvetic=10 y (km)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 eyy (1/s)}'
+plot[:660][-10e-16:1.4e-15]\
+'y_profile032' u 1:4 t '{/Helvetic=10 32x32}' w l,\
+'y_profile048' u 1:4 t '{/Helvetic=10 48x48}' w l,\
+'y_profile064' u 1:4 t '{/Helvetic=10 64x64}' w l,\
+'y_profile128' u 1:4 t '{/Helvetic=10 128x128}' w l,\
+'y_profile256' u 1:4 t '{/Helvetic=10 256x256}' w l
+#EXY
+set size 0.33, 1
+set origin 0.66, 0.0
+set pointsize 0.3
+set ytics 4e-17 offset 0,0 font 'Helvetic,8'
+set grid
+set key top left
+set xlabel offset 0,1 '{/Helvetic=10 y (km)}'
+set ylabel offset 1.5,0 '{/Helvetic=10 exy (1/s)}'
+plot[0:660][-1e-16:2.4e-16]\
+'y_profile032' u 1:5 t '{/Helvetic=10 32x32}' w l,\
+'y_profile048' u 1:5 t '{/Helvetic=10 48x48}' w l,\
+'y_profile064' u 1:5 t '{/Helvetic=10 64x64}' w l,\
+'y_profile128' u 1:5 t '{/Helvetic=10 128x128}' w l,\
+'y_profile256' u 1:5 t '{/Helvetic=10 256x256}' w l
+unset multiplot
