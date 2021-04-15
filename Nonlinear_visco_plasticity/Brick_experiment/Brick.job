@@ -4,28 +4,21 @@ gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.05c
 gmt gmtset MAP_LABEL_OFFSET 0.1c
 gmt gmtset MAP_TITLE_OFFSET 0.2c
 
-gmt makecpt -Cdavos -D -T1e-8/1 > Strain.cpt
+gmt makecpt -Cdavos -D -T0/2e-5/1e-7 > Strain.cpt
 
 PS=Brick_Beam.eps
 
 gmt psbasemap -R0/40/0/10 -JX8/2 -Bx10f5 -By2f1 -BWSne -X1.5 -Y18 -K -P > $PS
-awk '{if(NR>66186 && NR<132364 && $1!=0. && $2!=0.) print(($1-(78.125/2))/1e3,($2-(78.125/2))/1e3)}' ./512x128/Compression/0°/Solution.00001.vtu > xy.tmp
-awk '{if(NR>394519 && NR<460056) print($1*1e13)}' ./512x128/Compression/0°/Solution.00001.vtu > visc.tmp
-paste xy.tmp visc.tmp > fig.tmp
-gmt psxy fig.tmp -R -JX -O -Ss0.04 -CStrain -K >> $PS
-awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+awk '{if(NR>2) print($2/1e3,$3/1e3,$14*1e8)}' ./512x128/Compression/5°/Elementi.00000.txt | gmt psxy -R -JX -O -Ss0.04 -CStrain -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"a)")}' ./512x128/Compression/0°/Solution.00000.vtu | gmt pstext -O -R -JX -K >> $PS
 
 gmt psbasemap -R0/40/0/10 -JX8/2 -Bx10f5 -By2f1 -BWSne -Y-2.6 -K -P -O >> $PS
-awk '{if(NR>394519 && NR<460056) print($1*1e13)}' ./512x128/Compression/20°/Solution.00001.vtu > visc.tmp
-paste xy.tmp visc.tmp > fig.tmp
-gmt psxy fig.tmp -R -JX -O -Ss0.04 -CStrain -K >> $PS
-awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
+awk '{if(NR>2) print($2/1e3,$3/1e3,$14*1e8)}' ./512x128/Compression/20°/Elementi.00000.txt | gmt psxy -R -JX -O -Ss0.04 -CStrain -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"b)")}' ./512x128/Compression/0°/Solution.00000.vtu | gmt pstext -O -R -JX -K >> $PS
 
 gmt psbasemap -R0/40/0/10 -JX8/2 -Bx10f5 -By2f1 -BWsne -Y-2.6 -K -P -O >> $PS
-awk '{if(NR>394519 && NR<460056) print($1*1e13)}' ./512x128/Extension/20°/Solution.00001.vtu > visc.tmp
-paste xy.tmp visc.tmp > fig.tmp
-gmt psxy fig.tmp -R -JX -O -Ss0.04 -CStrain -K >> $PS
-awk '{if(NR==1) print(0.1,0.6,"a)")}' ./Rough/Solution.00001.vtu | gmt pstext -O -R -JX -K >> $PS
-gmt psscale -CStrain -O -Dx4/-0.2/8/0.2h -Ba2f0.1:"Strain rate (1/s)": >> $PS
+awk '{if(NR>2) print($2/1e3,$3/1e3,$14*1e8)}' ./512x128/Extension/20°/Elementi.00000.txt | gmt psxy -R -JX -O -Ss0.04 -CStrain -K >> $PS
+awk '{if(NR==1) print(0.1,0.6,"c)")}' ./512x128/Compression/0°/Solution.00000.vtu | gmt pstext -O -R -JX -K >> $PS
+gmt psscale -CStrain -O -Dx4/-0.2/8/0.2h -Ba5e-6f5e-7:"Strain rate (1/s)": >> $PS
 
-rm gmt.* *.tmp *.cpt
+rm gmt.* *.cpt

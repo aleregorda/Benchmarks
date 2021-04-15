@@ -1,117 +1,84 @@
 set term pdf size 10,6 enhanced
 set output 'convergence.pdf'
 set multiplot
-#CORRELATION
+#RESIDUALS EXTENSION
 set origin 0.0,0.5
-set size 0.33,0.5
-set key top right
-set log xy
-set grid
-set format y "10^{%L}"
-set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 1-Correlation}'
-set xtics 10 offset 0,0.5 font 'Helvetic,8'
-set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-8:1e0]\
-'Convergence_0' u 1:2 w l t '0°',\
-'Convergence_0_Free' u 1:2 w l t '0°_{Free}',\
-'Convergence' u 1:2 w l t '0°_{Free2}',\
-'Convergence2' u 1:2 w l t '0°_{Free2}',\
-'Convergence_15' u 1:2 w l t '15°',\
-'Convergence_30' u 1:2 w l t '30°'
-reset
-#R/R0
-set origin 0.33,0.5
-set size 0.33,0.5
-set key top right
-set log xy
-set grid
-set format y "10^{%L}"
-set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 R/R0}'
-set xtics 10 offset 0,0.5 font 'Helvetic,8'
-set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-13:1e-4]\
-'Convergence_0' u 1:3 w l t '0°',\
-'Convergence_0_Free' u 1:3 w l t '0°_{Free}',\
-'Convergence' u 1:3 w l t '0°_{Free2}',\
-'Convergence2' u 1:3 w l t '0°_{Free2}',\
-'Convergence_15' u 1:3 w l t '15°',\
-'Convergence_30' u 1:3 w l t '30°'
-reset
-#RESIDUALS
-set origin 0.66,0.5
-set size 0.33,0.5
-set key top right
-set log xy
-set grid
-set format y "10^{%L}"
-set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 Residuals}'
-set xtics 10 offset 0,0.5 font 'Helvetic,8'
-set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-9:2e-5]\
-'Convergence_0' u 1:4 w l t '0°',\
-'Convergence_0_Free' u 1:4 w l t '0°_{Free}',\
-'Convergence' u 1:4 w l t '0°_{Free2}',\
-'Convergence2' u 1:4 w l t '0°_{Free2}',\
-'Convergence_15' u 1:4 w l t '15°',\
-'Convergence_30' u 1:4 w l t '30°'
-reset
-#CORRELATION
-set origin 0.0,0.0
-set size 0.33,0.5
-set key top right
+set size 0.5,0.5
+set key top right spacing 0.7
 set log y
 set grid
 set format y "10^{%L}"
 set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 1-Correlation}'
+set ylabel offset 1,0 '{/Helvetic=10 ||R^i||_2/||R^0||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-8:1e0]\
-'Convergence_0' u 1:2 w l t '0°',\
-'Convergence_0_Free' u 1:2 w l t '0°_{Free}',\
-'Convergence' u 1:2 w l t '0°_{Free2}',\
-'Convergence2' u 1:2 w l t '0°_{Free2}',\
-'Convergence_15' u 1:2 w l t '15°',\
-'Convergence_30' u 1:2 w l t '30°'
+plot[0:1000][1e-14:1e-7]\
+'Convergence_0' u 1:3 w l t '{/Helvetic=8 0°}',\
+'Convergence_5' u 1:3 w l t '{/Helvetic=8 5°}',\
+'Convergence_10' u 1:3 w l t '{/Helvetic=8 10°}',\
+'Convergence_15' u 1:3 w l t '{/Helvetic=8 15°}',\
+'Convergence_20' u 1:3 w l t '{/Helvetic=8 20°}',\
+'Convergence_25' u 1:3 w l t '{/Helvetic=8 25°}',\
+'Convergence_30' u 1:3 w l t '{/Helvetic=8 30°}'
 reset
-#R/R0
-set origin 0.33,0.0
-set size 0.33,0.5
-set key top right
+#VELOCITY EXTENSION
+set origin 0.5,0.5
+set size 0.5,0.5
+set key top right spacing 0.7
 set log y
 set grid
 set format y "10^{%L}"
 set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 R/R0}'
+set ylabel offset 1,0 '{/Helvetic=10 ||v_i-v_{i-1}||_2/||v_{i-1}||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-13:1e-4]\
-'Convergence_0' u 1:3 w l t '0°',\
-'Convergence_0_Free' u 1:3 w l t '0°_{Free}',\
-'Convergence' u 1:3 w l t '0°_{Free2}',\
-'Convergence2' u 1:3 w l t '0°_{Free2}',\
-'Convergence_15' u 1:3 w l t '15°',\
-'Convergence_30' u 1:3 w l t '30°'
+plot[0:1000][1e-7:1e-1]\
+'Convergence_0' u 1:4 w l t '{/Helvetic=8 0°}',\
+'Convergence_5' u 1:4 w l t '{/Helvetic=8 5°}',\
+'Convergence_10' u 1:4 w l t '{/Helvetic=8 10°}',\
+'Convergence_15' u 1:4 w l t '{/Helvetic=8 15°}',\
+'Convergence_20' u 1:4 w l t '{/Helvetic=8 20°}',\
+'Convergence_25' u 1:4 w l t '{/Helvetic=8 25°}',\
+'Convergence_30' u 1:4 w l t '{/Helvetic=8 30°}'
 reset
-#RESIDUALS
-set origin 0.66,0.0
-set size 0.33,0.5
-set key top right
+#RESIDUALS COMPRESSION
+set origin 0.0,0
+set size 0.5,0.5
+set key top right spacing 0.7
 set log y
 set grid
 set format y "10^{%L}"
 set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 Residuals}'
+set ylabel offset 1,0 '{/Helvetic=10 ||R^i||_2/||R^0||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-9:2e-5]\
-'Convergence_0' u 1:4 w l t '0°',\
-'Convergence_0_Free' u 1:4 w l t '0°_{Free}',\
-'Convergence' u 1:4 w l t '0°_{Free2}',\
-'Convergence2' u 1:4 w l t '0°_{Free2}',\
-'Convergence_15' u 1:4 w l t '15°',\
-'Convergence_30' u 1:4 w l t '30°'
+plot[0:1000][1e-14:1e-7]\
+'Convergence_0C' u 1:3 w l t '{/Helvetic=8 0°}',\
+'Convergence_5C' u 1:3 w l t '{/Helvetic=8 5°}',\
+'Convergence_10C' u 1:3 w l t '{/Helvetic=8 10°}',\
+'Convergence_15C' u 1:3 w l t '{/Helvetic=8 15°}',\
+'Convergence_20C' u 1:3 w l t '{/Helvetic=8 20°}',\
+'Convergence_25C' u 1:3 w l t '{/Helvetic=8 25°}',\
+'Convergence_30C' u 1:3 w l t '{/Helvetic=8 30°}'
+reset
+#VELOCITY COMPRESSION
+set origin 0.5,0
+set size 0.5,0.5
+set key top right spacing 0.7
+set log y
+set grid
+set format y "10^{%L}"
+set xlabel offset 0,1 '{/Helvetic=10 iteration}'
+set ylabel offset 1,0 '{/Helvetic=10 ||v_i-v_{i-1}||_2/||v_{i-1}||_2}'
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics 10 offset 0.5,0 font 'Helvetic,8'
+plot[0:1000][1e-7:1e-1]\
+'Convergence_0C' u 1:4 w l t '{/Helvetic=8 0°}',\
+'Convergence_5C' u 1:4 w l t '{/Helvetic=8 5°}',\
+'Convergence_10C' u 1:4 w l t '{/Helvetic=8 10°}',\
+'Convergence_15C' u 1:4 w l t '{/Helvetic=8 15°}',\
+'Convergence_20C' u 1:4 w l t '{/Helvetic=8 20°}',\
+'Convergence_25C' u 1:4 w l t '{/Helvetic=8 25°}',\
+'Convergence_30C' u 1:4 w l t '{/Helvetic=8 30°}'
+reset
 unset multiplot

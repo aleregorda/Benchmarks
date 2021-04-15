@@ -7,8 +7,9 @@ set grid
 set key center right
 set xlabel offset 0,1 '{/Helvetic=10 Internal friction angle (°)}'
 set ylabel offset 2.5,0 '{/Helvetic=10 Shear band angle (°)}'
-plot[0:25][25:65]\
-'Brick' t '{/Helvetic=10 Model' pt 7 w lp,\
-'Coulomb' t '{/Helvetic=10 Coulomb' w l,\
-'Arthur' t '{/Helvetic=10 Arthur' w l,\
-'Roscoe' t '{/Helvetic=10 Roscoe' w l
+plot[0:35][25:65]\
+'Brick' t '' w l lc 'black',\
+'Brick' t '{/Helvetic=8 Model' w yerror lc 'red' pt 7,\
+'Coulomb' t '{/Helvetic=8 Coulomb' w l lc 'black' dt 2,\
+'Arthur' t '{/Helvetic=8 Arthur' w l lc 'black' dt 3,\
+'Roscoe' t '{/Helvetic=8 Roscoe' w l lc 'black' dt 4

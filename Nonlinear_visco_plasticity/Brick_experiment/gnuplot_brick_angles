@@ -1,0 +1,27 @@
+set term pdf enhanced
+set output 'Brick.pdf'
+set pointsize 0.5
+set xtics 5 offset 0,0.5 font 'Helvetic,8'
+set ytics 5 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key center right
+set xlabel offset 0,1 '{/Helvetic=10 Internal friction angle (°)}'
+set ylabel offset 2.5,0 '{/Helvetic=10 Shear band angle (°)}'
+plot[0:25][25:65]\
+'Coulomb' t '{/Helvetic=10 Coulomb' w l lc 2,\
+'Arthur' t '{/Helvetic=10 Arthur' w l lc 3,\
+'Roscoe' t '{/Helvetic=10 Roscoe' w l lc 4,\
+'Angles_0C' u (0):3 t '' w l lc 'black',\
+'Angles_5C' u (5):3 t '' w l lc 'black',\
+'Angles_10C' u (10):3 t '' w l lc 'black',\
+'Angles_15C' u (15):3 t '' w l lc 'black',\
+'Angles_20C' u (20):3 t '' w l lc 'black',\
+'Angles_25C' u (15):3 t '' w l lc 'black',\
+'Angles_30C' u (30):3 t '' w l lc 'black',\
+'Angles_0' u (0):3 t '' w l lc 'black',\
+'Angles_5' u (5):3 t '' w l lc 'black',\
+'Angles_10' u (10):3 t '' w l lc 'black',\
+'Angles_15' u (15):3 t '' w l lc 'black',\
+'Angles_20' u (20):3 t '' w l lc 'black',\
+'Angles_25' u (25):3 t '' w l lc 'black',\
+'Angles_30' u (30):3 t '' w l lc 'black'

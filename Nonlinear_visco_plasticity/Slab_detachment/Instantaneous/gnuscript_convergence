@@ -4,6 +4,7 @@ set multiplot
 #CORRELATION
 set origin 0.0,0.0
 set size 0.5,1
+set title '{/Helvetic=10 Grid size variation}'
 set key top right
 set log y
 set grid
@@ -23,6 +24,7 @@ reset
 #R/R0
 set origin 0.5,0.0
 set size 0.5,1
+set title '{/Helvetic=10 Penalty variation}'
 set key top right
 set log y
 set grid
