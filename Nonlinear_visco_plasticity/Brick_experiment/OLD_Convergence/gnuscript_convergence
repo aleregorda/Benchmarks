@@ -9,10 +9,10 @@ set log y
 set grid
 set format y "10^{%L}"
 set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 ||R_i||_2/||R_0||_2}'
+set ylabel offset 1,0 '{/Helvetic=10 ||R^i||_2/||R^0||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-5:1e1]\
+plot[0:1000][1e-14:1e-7]\
 'Convergence_0' u 1:3 w l t '{/Helvetic=8 0°}',\
 'Convergence_5' u 1:3 w l t '{/Helvetic=8 5°}',\
 'Convergence_10' u 1:3 w l t '{/Helvetic=8 10°}',\
@@ -32,7 +32,7 @@ set xlabel offset 0,1 '{/Helvetic=10 iteration}'
 set ylabel offset 1,0 '{/Helvetic=10 ||v_i-v_{i-1}||_2/||v_{i-1}||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-7:1e-1]\
+plot[0:1000][1e-7:1e-1]\
 'Convergence_0' u 1:4 w l t '{/Helvetic=8 0°}',\
 'Convergence_5' u 1:4 w l t '{/Helvetic=8 5°}',\
 'Convergence_10' u 1:4 w l t '{/Helvetic=8 10°}',\
@@ -49,10 +49,10 @@ set log y
 set grid
 set format y "10^{%L}"
 set xlabel offset 0,1 '{/Helvetic=10 iteration}'
-set ylabel offset 1,0 '{/Helvetic=10 ||R_i||_2/||R_0||_2}'
+set ylabel offset 1,0 '{/Helvetic=10 ||R^i||_2/||R^0||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-5:1e1]\
+plot[0:1000][1e-14:1e-7]\
 'Convergence_0C' u 1:3 w l t '{/Helvetic=8 0°}',\
 'Convergence_5C' u 1:3 w l t '{/Helvetic=8 5°}',\
 'Convergence_10C' u 1:3 w l t '{/Helvetic=8 10°}',\
@@ -72,7 +72,7 @@ set xlabel offset 0,1 '{/Helvetic=10 iteration}'
 set ylabel offset 1,0 '{/Helvetic=10 ||v_i-v_{i-1}||_2/||v_{i-1}||_2}'
 set xtics 100 offset 0,0.5 font 'Helvetic,8'
 set ytics 10 offset 0.5,0 font 'Helvetic,8'
-plot[1:1000][1e-7:1e-1]\
+plot[0:1000][1e-7:1e-1]\
 'Convergence_0C' u 1:4 w l t '{/Helvetic=8 0°}',\
 'Convergence_5C' u 1:4 w l t '{/Helvetic=8 5°}',\
 'Convergence_10C' u 1:4 w l t '{/Helvetic=8 10°}',\
