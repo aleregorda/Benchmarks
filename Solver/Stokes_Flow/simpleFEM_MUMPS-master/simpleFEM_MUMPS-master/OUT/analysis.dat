@@ -1,0 +1,13 @@
+           8 analysis time    5.2462000000000009E-002 s
+          32 analysis time    6.2400000000001343E-004 s
+          50 analysis time    5.6899999999998618E-004 s
+         128 analysis time    9.8100000000000964E-004 s
+         242 analysis time    1.3150000000000106E-003 s
+         512 analysis time    2.4300000000000432E-003 s
+         968 analysis time    4.5299999999999230E-003 s
+        2048 analysis time   0.18708499999999995      s
+        4050 analysis time    2.2100000000000009E-002 s
+        8192 analysis time    4.8700000000000188E-002 s
+       16200 analysis time   0.10111400000000081      s
+       32768 analysis time   0.20759599999999878      s
+       65522 analysis time   0.48258799999999979      s

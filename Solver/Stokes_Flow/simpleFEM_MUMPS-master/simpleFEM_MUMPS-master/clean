@@ -1,0 +1,8 @@
+rm *.dat 
+rm *.o
+rm *.pdf
+rm fort.*
+rm simplefem2D
+rm opla
+rm OUT/*
+rm opla

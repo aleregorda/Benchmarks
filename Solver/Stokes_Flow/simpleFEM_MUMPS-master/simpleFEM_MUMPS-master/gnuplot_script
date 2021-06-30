@@ -1,0 +1,65 @@
+set term pdf enhanced
+set log xy
+set grid
+set xlabel 'Nfem'
+set ylabel 'time (s)'
+
+set output 'analysis.pdf'
+plot[][]\
+ 'OUT/analysis.dat' u 1:4 w lp notitle
+
+set output 'factorisation.pdf'
+plot[][]\
+ 'OUT/factorisation.dat' u 1:4 w lp notitle
+
+set output 'solution.pdf'
+plot[][]\
+ 'OUT/solution.dat' u 1:4 w lp notitle
+
+set output 'total.pdf'
+plot[][]\
+ 'OUT/total.dat' u 1:4 w lp notitle
+
+set key left
+set output 'all.pdf'
+plot[][]\
+x**1.2/1000000 lt -1 t 'x^{1.2}',\
+ 'OUT/analysis.dat' u 1:4 w lp t 'analysis',\
+ 'OUT/factorisation.dat' u 1:4 w lp t 'factorisation',\
+ 'OUT/solution.dat' u 1:4 w lp t 'solution',\
+ 'OUT/total.dat' u 1:4 w lp t 'total'
+
+set ylabel 'memory (Mb)'
+set output 'memory_factorisation.pdf'
+plot[][:20000]\
+ 2048  lt -1 t '2 Gb' ,\
+ 4096  lt -1 t '4 Gb' ,\
+ 8192  lt -1 t '8 Gb' ,\
+ 16384 lt -1 t '16 Gb' ,\
+ 'OUT/memory_factorisation.dat'  u 1:8 w lp pt 5 notitle
+
+set output 'memory_solution.pdf'
+plot[][:20000]\
+ 2048  lt -1 t '2 Gb' ,\
+ 4096  lt -1 t '4 Gb' ,\
+ 8192  lt -1 t '8 Gb' ,\
+ 16384 lt -1 t '16 Gb' ,\
+ 'OUT/memory_solution.dat'  u 1:8 w lp pt 5 notitle
+
+set output 'memory_all.pdf'
+plot[][:20000]\
+ 2048  lt -1 t '2 Gb' ,\
+ 4096  lt -1 t '4 Gb' ,\
+ 8192  lt -1 t '8 Gb' ,\
+ 16384 lt -1 t '16 Gb' ,\
+ 'OUT/memory_factorisation.dat'  u 1:8 w lp pt 5 t 'factorisation',\
+ 'OUT/memory_solution.dat'       u 1:8 w lp pt 5 t 'solution'
+
+
+
+
+
+
+
+
+
