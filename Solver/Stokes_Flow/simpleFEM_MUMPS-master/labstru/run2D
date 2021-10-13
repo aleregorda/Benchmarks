@@ -1,0 +1,9 @@
+export OMP_NUM_THREADS=1
+
+make code2D
+mpiexec -np 8 simplefem
+./scr
+mv opla OUT/
+mv *.dat OUT/
+gnuplot gnuplot_script
+mv *.pdf OUT

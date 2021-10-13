@@ -1,0 +1,28 @@
+FLAGS =  -c -ffree-line-length-none  -O3 -mtune=native
+
+#FLAGS =  -mtune=native  -c -ffree-line-length-none  -O3 -fbounds-check -fcheck=all -Wall 
+
+topdir = /home/labstru/MUMPS_5.3.3
+
+F90      = gfortran
+F77      = gfortran
+MAKE     = make
+
+MUMPS    = $(topdir)/lib
+MUMPS2   = $(topdir)/libseq
+PORD     = $(topdir)/PORD/lib
+METIS	 = /usr/lib
+MUMPS3   = $(topdir)/include
+
+LIBS = \
+-L$(MUMPS) -ldmumps -lmumps_common\
+-L$(MUMPS2) -lmpiseq \
+-L$(PORD) -lpord \
+-L$(METIS) -lmetis \
+/usr/lib/x86_64-linux-gnu/OpenBLAS-0.3.15/libopenblas.a /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+#/usr/lib/x86_64-linux-gnu/OpenBLAS-0.3.15/libopenblas_piledriverp-r0.3.15.a /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+
+INCLUDE = \
+-I$(MUMPS2) -I$(MUMPS3)
+
+OPTIONS = -fopenmp

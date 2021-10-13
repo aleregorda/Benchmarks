@@ -1,12 +1,19 @@
-           8 solution time    6.3200000000002143E-004 s   0.00000000     s
-          32 solution time    6.5799999999999192E-004 s   0.00000000     s
-          50 solution time    4.1299999999999670E-004 s   0.00000000     s
-         128 solution time    5.5600000000000094E-004 s   0.00000000     s
-         242 solution time    7.1299999999996366E-004 s   0.00000000     s
-         512 solution time    1.0640000000000649E-003 s   0.00000000     s
-         968 solution time    1.4429000000000025E-002 s   3.90625000E-03 s
-        2048 solution time    8.4130000000000038E-003 s   1.17187500E-02 s
-        4050 solution time    3.9119000000000348E-002 s   4.29687500E-02 s
-        8192 solution time    3.8166000000000366E-002 s   3.90625000E-02 s
-       16200 solution time    2.0710000000001116E-002 s   5.07812500E-02 s
-       32768 solution time    4.1986000000001411E-002 s   4.29687500E-02 s
+           8 CPU solution time    5.7600000000000012E-004 s
+          32 CPU solution time    3.5100000000000409E-004 s
+          50 CPU solution time    3.1599999999999684E-004 s
+         128 CPU solution time    3.6700000000000621E-004 s
+         242 CPU solution time    4.3500000000000483E-004 s
+         512 CPU solution time    5.0499999999999157E-004 s
+         968 CPU solution time    6.5899999999999292E-004 s
+        2048 CPU solution time    1.3890000000000013E-003 s
+        4050 CPU solution time    2.0229999999999970E-003 s
+        8192 CPU solution time    2.9370000000000229E-003 s
+       16200 CPU solution time    5.3050000000000042E-003 s
+       32768 CPU solution time    9.9060000000000259E-003 s
+       65522 CPU solution time    2.0287999999999973E-002 s
+      131072 CPU solution time    4.0358000000000116E-002 s
+      262088 CPU solution time   0.10590700000000020      s
+      524288 CPU solution time   0.19235299999999977      s
+     1048352 CPU solution time   0.39046299999999867      s
+     2097152 CPU solution time   0.68331299999999828      s
+     4193408 CPU solution time    1.4684320000000000      s

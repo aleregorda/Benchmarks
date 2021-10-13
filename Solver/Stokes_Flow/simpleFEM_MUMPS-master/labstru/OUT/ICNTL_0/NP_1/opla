@@ -1,0 +1,383 @@
+======================================================================
+=====[grid is     2    2]=============================================
+======================================================================
+           8 allocate time         2.9999999999995308E-006
+           8 grid setup time       1.9999999999985307E-006
+           8 grid icon time        1.0000000000010001E-006
+           8 mumps arrays time     1.0000000000010001E-006
+           8 bc time               1.9999999999985307E-006
+           8 make matrix           5.9999999999990616E-006
+           8 CPU analysis time    4.8000000000000126E-004 s
+           8 eff. analysis time    3.90625000E-03 s
+           8 CPU factor.  time    2.4300000000000016E-004 s
+           8 eff. factor. time    0.00000000     s
+           8 CPU solution time    2.4700000000000069E-004 s
+           8 eff. solution time    0.00000000     s
+           8 CPU total time       9.9799999999999889E-004 s
+           8 eff. total time       3.90625000E-03 s
+           8 estimated RAM needed for the factorization           0 Mb
+           8 effective RAM needed for the factorization           0 Mb
+           8 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is     4    4]=============================================
+======================================================================
+          32 allocate time         1.9999999999985307E-006
+          32 grid setup time       0.0000000000000000     
+          32 grid icon time        0.0000000000000000     
+          32 mumps arrays time     1.9999999999985307E-006
+          32 bc time               0.0000000000000000     
+          32 make matrix           1.3000000000002593E-005
+          32 CPU analysis time    1.4099999999999877E-004 s
+          32 eff. analysis time    0.00000000     s
+          32 CPU factor.  time    2.2799999999999904E-004 s
+          32 eff. factor. time    0.00000000     s
+          32 CPU solution time    1.9299999999999873E-004 s
+          32 eff. solution time    0.00000000     s
+          32 CPU total time       5.9000000000000025E-004 s
+          32 eff. total time       0.00000000     s
+          32 estimated RAM needed for the factorization           0 Mb
+          32 effective RAM needed for the factorization           0 Mb
+          32 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is     5    5]=============================================
+======================================================================
+          50 allocate time         9.9999999999753064E-007
+          50 grid setup time       1.0000000000010001E-006
+          50 grid icon time        1.0000000000010001E-006
+          50 mumps arrays time     1.0000000000010001E-006
+          50 bc time               1.0000000000010001E-006
+          50 make matrix           2.2000000000001185E-005
+          50 CPU analysis time    1.4600000000000030E-004 s
+          50 eff. analysis time    0.00000000     s
+          50 CPU factor.  time    2.5399999999999728E-004 s
+          50 eff. factor. time    0.00000000     s
+          50 CPU solution time    1.9399999999999973E-004 s
+          50 eff. solution time    0.00000000     s
+          50 CPU total time       6.1599999999999849E-004 s
+          50 eff. total time       0.00000000     s
+          50 estimated RAM needed for the factorization           0 Mb
+          50 effective RAM needed for the factorization           0 Mb
+          50 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is     8    8]=============================================
+======================================================================
+         128 allocate time         9.9999999999753064E-007
+         128 grid setup time       1.0000000000010001E-006
+         128 grid icon time        1.0000000000010001E-006
+         128 mumps arrays time     1.0000000000010001E-006
+         128 bc time               1.9999999999985307E-006
+         128 make matrix           6.6000000000000086E-005
+         128 CPU analysis time    1.9299999999999873E-004 s
+         128 eff. analysis time    0.00000000     s
+         128 CPU factor.  time    4.4199999999999795E-004 s
+         128 eff. factor. time    3.90625000E-03 s
+         128 CPU solution time    2.6500000000000135E-004 s
+         128 eff. solution time    0.00000000     s
+         128 CPU total time       9.2500000000000221E-004 s
+         128 eff. total time       3.90625000E-03 s
+         128 estimated RAM needed for the factorization           0 Mb
+         128 effective RAM needed for the factorization           0 Mb
+         128 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is    11   11]=============================================
+======================================================================
+         242 allocate time         2.0000000000020002E-006
+         242 grid setup time       1.0000000000010001E-006
+         242 grid icon time        9.9999999999406119E-007
+         242 mumps arrays time     2.0000000000020002E-006
+         242 bc time               1.9999999999950613E-006
+         242 make matrix           1.3500000000000317E-004
+         242 CPU analysis time    2.4400000000000116E-004 s
+         242 eff. analysis time    0.00000000     s
+         242 CPU factor.  time    7.5099999999999473E-004 s
+         242 eff. factor. time    0.00000000     s
+         242 CPU solution time    3.4000000000000002E-004 s
+         242 eff. solution time    0.00000000     s
+         242 CPU total time       1.3610000000000011E-003 s
+         242 eff. total time       0.00000000     s
+         242 estimated RAM needed for the factorization           0 Mb
+         242 effective RAM needed for the factorization           0 Mb
+         242 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is    16   16]=============================================
+======================================================================
+         512 allocate time         3.9999999999970615E-006
+         512 grid setup time       2.0000000000020002E-006
+         512 grid icon time        9.9999999999406119E-007
+         512 mumps arrays time     5.9999999999990616E-006
+         512 bc time               1.9999999999950613E-006
+         512 make matrix           3.6300000000000221E-004
+         512 CPU analysis time    5.2200000000000163E-004 s
+         512 eff. analysis time    0.00000000     s
+         512 CPU factor.  time    2.0729999999999985E-003 s
+         512 eff. factor. time    0.00000000     s
+         512 CPU solution time    9.0200000000000002E-004 s
+         512 eff. solution time    0.00000000     s
+         512 CPU total time       3.5349999999999965E-003 s
+         512 eff. total time       0.00000000     s
+         512 estimated RAM needed for the factorization           0 Mb
+         512 effective RAM needed for the factorization           0 Mb
+         512 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is    22   22]=============================================
+======================================================================
+         968 allocate time         4.0000000000040004E-006
+         968 grid setup time       1.0000000000010001E-006
+         968 grid icon time        9.9999999999406119E-007
+         968 mumps arrays time     7.0000000000000617E-006
+         968 bc time               2.0000000000020002E-006
+         968 make matrix           6.8599999999999911E-004
+         968 CPU analysis time    6.5899999999999986E-004 s
+         968 eff. analysis time    0.00000000     s
+         968 CPU factor.  time    3.5789999999999988E-003 s
+         968 eff. factor. time    3.90625000E-03 s
+         968 CPU solution time    9.0499999999999609E-004 s
+         968 eff. solution time    0.00000000     s
+         968 CPU total time       5.1910000000000012E-003 s
+         968 eff. total time       3.90625000E-03 s
+         968 estimated RAM needed for the factorization           1 Mb
+         968 effective RAM needed for the factorization           1 Mb
+         968 effective RAM needed for the solution                0 Mb
+======================================================================
+=====[grid is    32   32]=============================================
+======================================================================
+        2048 allocate time         2.0000000000020002E-006
+        2048 grid setup time       2.0000000000020002E-006
+        2048 grid icon time        1.0000000000010001E-006
+        2048 mumps arrays time     8.0000000000010618E-006
+        2048 bc time               4.9999999999980616E-006
+        2048 make matrix           1.2980000000000005E-003
+        2048 CPU analysis time    1.1380000000000001E-003 s
+        2048 eff. analysis time    0.00000000     s
+        2048 CPU factor.  time    9.6229999999999996E-003 s
+        2048 eff. factor. time    1.17187500E-02 s
+        2048 CPU solution time    1.7330000000000054E-003 s
+        2048 eff. solution time    0.00000000     s
+        2048 CPU total time       1.2521999999999998E-002 s
+        2048 eff. total time       1.17187500E-02 s
+        2048 estimated RAM needed for the factorization           2 Mb
+        2048 effective RAM needed for the factorization           2 Mb
+        2048 effective RAM needed for the solution                1 Mb
+======================================================================
+=====[grid is    45   45]=============================================
+======================================================================
+        4050 allocate time         3.0000000000030003E-006
+        4050 grid setup time       3.0000000000030003E-006
+        4050 grid icon time        4.0000000000040004E-006
+        4050 mumps arrays time     1.4000000000000123E-005
+        4050 bc time               1.4000000000000123E-005
+        4050 make matrix           2.6489999999999986E-003
+        4050 CPU analysis time    2.0170000000000049E-003 s
+        4050 eff. analysis time    3.90625000E-03 s
+        4050 CPU factor.  time    2.4472000000000008E-002 s
+        4050 eff. factor. time    2.34375000E-02 s
+        4050 CPU solution time    3.4860000000000030E-003 s
+        4050 eff. solution time    3.90625000E-03 s
+        4050 CPU total time       3.0010999999999996E-002 s
+        4050 eff. total time       3.12500000E-02 s
+        4050 estimated RAM needed for the factorization           3 Mb
+        4050 effective RAM needed for the factorization           3 Mb
+        4050 effective RAM needed for the solution                2 Mb
+======================================================================
+=====[grid is    64   64]=============================================
+======================================================================
+        8192 allocate time         3.0000000000030003E-006
+        8192 grid setup time       5.9999999999921227E-006
+        8192 grid icon time        7.9999999999941229E-006
+        8192 mumps arrays time     6.8999999999999617E-005
+        8192 bc time               2.1999999999994246E-005
+        8192 make matrix           5.4040000000000060E-003
+        8192 CPU analysis time    4.2979999999999963E-003 s
+        8192 eff. analysis time    3.90625000E-03 s
+        8192 CPU factor.  time    6.4254999999999979E-002 s
+        8192 eff. factor. time    6.64062500E-02 s
+        8192 CPU solution time    7.8239999999999976E-003 s
+        8192 eff. solution time    7.81250000E-03 s
+        8192 CPU total time       7.6421999999999990E-002 s
+        8192 eff. total time       7.81250000E-02 s
+        8192 estimated RAM needed for the factorization           7 Mb
+        8192 effective RAM needed for the factorization           7 Mb
+        8192 effective RAM needed for the solution                6 Mb
+======================================================================
+=====[grid is    90   90]=============================================
+======================================================================
+       16200 allocate time         3.0000000000030003E-006
+       16200 grid setup time       1.0000000000010001E-005
+       16200 grid icon time        3.5000000000007248E-005
+       16200 mumps arrays time     6.1999999999978739E-005
+       16200 bc time               4.4000000000016248E-005
+       16200 make matrix           1.0768999999999973E-002
+       16200 CPU analysis time    7.8409999999999869E-003 s
+       16200 eff. analysis time    7.81250000E-03 s
+       16200 CPU factor.  time   0.15879099999999999      s
+       16200 eff. factor. time   0.156250000     s
+       16200 CPU solution time    1.4436000000000004E-002 s
+       16200 eff. solution time    1.56250000E-02 s
+       16200 CPU total time      0.18111199999999997      s
+       16200 eff. total time      0.179687500     s
+       16200 estimated RAM needed for the factorization          15 Mb
+       16200 effective RAM needed for the factorization          15 Mb
+       16200 effective RAM needed for the solution               13 Mb
+======================================================================
+=====[grid is   128  128]=============================================
+======================================================================
+       32768 allocate time         4.0000000000040004E-006
+       32768 grid setup time       2.1999999999966491E-005
+       32768 grid icon time        4.3000000000015248E-005
+       32768 mumps arrays time     1.2499999999998623E-004
+       32768 bc time               7.5999999999964984E-005
+       32768 make matrix           2.2160999999999986E-002
+       32768 CPU analysis time    1.6330999999999929E-002 s
+       32768 eff. analysis time    1.56250000E-02 s
+       32768 CPU factor.  time   0.41522299999999990      s
+       32768 eff. factor. time   0.414062500     s
+       32768 CPU solution time    3.1271999999999966E-002 s
+       32768 eff. solution time    3.51562500E-02 s
+       32768 CPU total time      0.46287400000000001      s
+       32768 eff. total time      0.464843750     s
+       32768 estimated RAM needed for the factorization          32 Mb
+       32768 effective RAM needed for the factorization          31 Mb
+       32768 effective RAM needed for the solution               28 Mb
+======================================================================
+=====[grid is   181  181]=============================================
+======================================================================
+       65522 allocate time         2.9999999999752447E-006
+       65522 grid setup time       4.9999999999883471E-005
+       65522 grid icon time        5.8000000000113516E-005
+       65522 mumps arrays time     2.1200000000010100E-004
+       65522 bc time               1.4399999999992197E-004
+       65522 make matrix           4.4043000000000054E-002
+       65522 CPU analysis time    3.1330000000000080E-002 s
+       65522 eff. analysis time    3.12500000E-02 s
+       65522 CPU factor.  time    1.4812960000000002      s
+       65522 eff. factor. time    1.48437500     s
+       65522 CPU solution time    7.0157000000000025E-002 s
+       65522 eff. solution time    7.03125000E-02 s
+       65522 CPU total time       1.5828369999999998      s
+       65522 eff. total time       1.58593750     s
+       65522 estimated RAM needed for the factorization          77 Mb
+       65522 effective RAM needed for the factorization          75 Mb
+       65522 effective RAM needed for the solution               69 Mb
+======================================================================
+=====[grid is   256  256]=============================================
+======================================================================
+      131072 allocate time         4.9999999998107114E-006
+      131072 grid setup time       1.8299999999982219E-004
+      131072 grid icon time        1.6999999999978144E-004
+      131072 mumps arrays time     4.8700000000012622E-004
+      131072 bc time               3.4200000000028652E-004
+      131072 make matrix           9.5126999999999740E-002
+      131072 CPU analysis time    7.8108999999999984E-002 s
+      131072 eff. analysis time    7.81250000E-02 s
+      131072 CPU factor.  time    2.8064760000000000      s
+      131072 eff. factor. time    2.80468750     s
+      131072 CPU solution time   0.12917600000000018      s
+      131072 eff. solution time   0.128906250     s
+      131072 CPU total time       3.0138179999999997      s
+      131072 eff. total time       3.01171875     s
+      131072 estimated RAM needed for the factorization         148 Mb
+      131072 effective RAM needed for the factorization         143 Mb
+      131072 effective RAM needed for the solution              132 Mb
+======================================================================
+=====[grid is   362  362]=============================================
+======================================================================
+      262088 allocate time         9.0000000003698233E-006
+      262088 grid setup time       3.0299999999972016E-004
+      262088 grid icon time        3.6799999999992394E-004
+      262088 mumps arrays time     1.1760000000000659E-003
+      262088 bc time               8.8400000000010692E-004
+      262088 make matrix          0.18114000000000008     
+      262088 CPU analysis time   0.14664300000000008      s
+      262088 eff. analysis time   0.144531250     s
+      262088 CPU factor.  time    6.9865480000000000      s
+      262088 eff. factor. time    6.99218750     s
+      262088 CPU solution time   0.26440500000000000      s
+      262088 eff. solution time   0.261718750     s
+      262088 CPU total time       7.3976479999999993      s
+      262088 eff. total time       7.39843750     s
+      262088 estimated RAM needed for the factorization         306 Mb
+      262088 effective RAM needed for the factorization         295 Mb
+      262088 effective RAM needed for the solution              275 Mb
+======================================================================
+=====[grid is   512  512]=============================================
+======================================================================
+      524288 allocate time         8.9999999985934664E-006
+      524288 grid setup time       1.2260000000008375E-003
+      524288 grid icon time        1.6280000000001849E-003
+      524288 mumps arrays time     6.9610000000004391E-003
+      524288 bc time               2.0869999999995059E-003
+      524288 make matrix          0.36131799999999892     
+      524288 CPU analysis time   0.40836000000000006      s
+      524288 eff. analysis time   0.406250000     s
+      524288 CPU factor.  time    18.380793000000001      s
+      524288 eff. factor. time    18.3906250     s
+      524288 CPU solution time   0.56058999999999770      s
+      524288 eff. solution time   0.558593750     s
+      524288 CPU total time       19.349794999999997      s
+      524288 eff. total time       19.3554688     s
+      524288 estimated RAM needed for the factorization         657 Mb
+      524288 effective RAM needed for the factorization         632 Mb
+      524288 effective RAM needed for the solution              593 Mb
+======================================================================
+=====[grid is   724  724]=============================================
+======================================================================
+     1048352 allocate time         1.0000000003174137E-005
+     1048352 grid setup time       2.2639999999967131E-003
+     1048352 grid icon time        2.3210000000020159E-003
+     1048352 mumps arrays time     7.0590000000052555E-003
+     1048352 bc time               3.6100000000018895E-003
+     1048352 make matrix          0.74977800000000627     
+     1048352 CPU analysis time   0.78214399999999529      s
+     1048352 eff. analysis time   0.785156250     s
+     1048352 CPU factor.  time    93.870471999999978      s
+     1048352 eff. factor. time    93.9101562     s
+     1048352 CPU solution time    1.2585770000000025      s
+     1048352 eff. solution time    1.25781250     s
+     1048352 CPU total time       95.911248000000001      s
+     1048352 eff. total time       95.9531250     s
+     1048352 estimated RAM needed for the factorization        1698 Mb
+     1048352 effective RAM needed for the factorization        1630 Mb
+     1048352 effective RAM needed for the solution             1571 Mb
+======================================================================
+=====[grid is  1024 1024]=============================================
+======================================================================
+     2097152 allocate time         4.9999999873762135E-006
+     2097152 grid setup time       4.4829999999933534E-003
+     2097152 grid icon time        4.8999999999921329E-003
+     2097152 mumps arrays time     2.2858999999982643E-002
+     2097152 bc time               6.2119999999765696E-003
+     2097152 make matrix           1.4675770000000057     
+     2097152 CPU analysis time    2.6508359999999982      s
+     2097152 eff. analysis time    2.65234375     s
+     2097152 CPU factor.  time    131.31438299999999      s
+     2097152 eff. factor. time    131.371094     s
+     2097152 CPU solution time    2.3800049999999828      s
+     2097152 eff. solution time    2.38281250     s
+     2097152 CPU total time       136.34527400000002      s
+     2097152 eff. total time       136.406250     s
+     2097152 estimated RAM needed for the factorization        2902 Mb
+     2097152 effective RAM needed for the factorization        2790 Mb
+     2097152 effective RAM needed for the solution             2646 Mb
+======================================================================
+=====[grid is  1448 1448]=============================================
+======================================================================
+     4193408 allocate time         2.3999999996249244E-005
+     4193408 grid setup time       9.8099999999590182E-003
+     4193408 grid icon time        9.3779999999696884E-003
+     4193408 mumps arrays time     4.2130000000042855E-002
+     4193408 bc time               1.4062999999964632E-002
+     4193408 make matrix           2.9262390000000096     
+     4193408 CPU analysis time    3.1548070000000052      s
+     4193408 eff. analysis time    3.16015625     s
+     4193408 CPU factor.  time    396.28327500000006      s
+     4193408 eff. factor. time    396.492188     s
+     4193408 CPU solution time    4.7245500000000220      s
+     4193408 eff. solution time    4.73046875     s
+     4193408 CPU total time       404.16269699999992      s
+     4193408 eff. total time       404.382812     s
+     4193408 estimated RAM needed for the factorization        6181 Mb
+     4193408 effective RAM needed for the factorization        5939 Mb
+     4193408 effective RAM needed for the solution             5668 Mb
+======================================================================
+ Total run time               705.968750     s
+======================================================================

@@ -1,0 +1,16 @@
+           8 CPU total time       2.9589999999999964E-003 s
+          32 CPU total time       1.9449999999999953E-003 s
+          50 CPU total time       1.9669999999999965E-003 s
+         128 CPU total time       2.4360000000000007E-003 s
+         242 CPU total time       3.3399999999999958E-003 s
+         512 CPU total time       5.8069999999999997E-003 s
+         968 CPU total time       8.8350000000000095E-003 s
+        2048 CPU total time       1.8500999999999990E-002 s
+        4050 CPU total time       3.7665000000000004E-002 s
+        8192 CPU total time       8.2880000000000009E-002 s
+       16200 CPU total time      0.21792599999999995      s
+       32768 CPU total time      0.44716699999999998      s
+       65522 CPU total time      0.93658300000000017      s
+      131072 CPU total time       2.0356720000000004      s
+      262088 CPU total time       4.5375789999999991      s
+      524288 CPU total time       10.333620000000002      s

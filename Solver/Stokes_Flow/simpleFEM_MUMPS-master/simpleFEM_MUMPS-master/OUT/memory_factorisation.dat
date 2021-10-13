@@ -11,14 +11,26 @@ effective RAM needed for the factorization:      0Mb (sum over all MPI processes
          512 effective RAM needed for the factorization           1 Mb
 effective RAM needed for the factorization:      1Mb (sum over all MPI processes)
          968 effective RAM needed for the factorization           1 Mb
-effective RAM needed for the factorization:      1Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      2Mb (sum over all MPI processes)
         2048 effective RAM needed for the factorization           2 Mb
 effective RAM needed for the factorization:      5Mb (sum over all MPI processes)
         4050 effective RAM needed for the factorization           5 Mb
-effective RAM needed for the factorization:      8Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      9Mb (sum over all MPI processes)
         8192 effective RAM needed for the factorization          10 Mb
 effective RAM needed for the factorization:     19Mb (sum over all MPI processes)
-       16200 effective RAM needed for the factorization          13 Mb
-effective RAM needed for the factorization:     28Mb (sum over all MPI processes)
-       32768 effective RAM needed for the factorization          20 Mb
-effective RAM needed for the factorization:     54Mb (sum over all MPI processes)
+       16200 effective RAM needed for the factorization          14 Mb
+effective RAM needed for the factorization:     33Mb (sum over all MPI processes)
+       32768 effective RAM needed for the factorization          19 Mb
+effective RAM needed for the factorization:     56Mb (sum over all MPI processes)
+       65522 effective RAM needed for the factorization          35 Mb
+effective RAM needed for the factorization:    112Mb (sum over all MPI processes)
+      131072 effective RAM needed for the factorization          63 Mb
+effective RAM needed for the factorization:    206Mb (sum over all MPI processes)
+      262088 effective RAM needed for the factorization         132 Mb
+effective RAM needed for the factorization:    401Mb (sum over all MPI processes)
+      524288 effective RAM needed for the factorization         262 Mb
+effective RAM needed for the factorization:    837Mb (sum over all MPI processes)
+     1048352 effective RAM needed for the factorization         565 Mb
+effective RAM needed for the factorization:   2081Mb (sum over all MPI processes)
+     2097152 effective RAM needed for the factorization        1078 Mb
+effective RAM needed for the factorization:   3643Mb (sum over all MPI processes)

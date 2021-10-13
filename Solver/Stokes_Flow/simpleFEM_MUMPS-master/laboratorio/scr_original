@@ -1,0 +1,7 @@
+grep analysis opla >> analysis.dat
+grep factor opla | grep time >> factorisation.dat
+grep solution opla | grep time >> solution.dat
+grep total opla >> total.dat
+grep effective opla | grep fact >> memory_factorisation.dat
+grep effective opla | grep solu >> memory_solution.dat
+

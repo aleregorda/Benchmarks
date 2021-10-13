@@ -1,0 +1,16 @@
+           8 CPU solution time    6.3599999999999768E-004 s
+          32 CPU solution time    5.7900000000000312E-004 s
+          50 CPU solution time    6.0699999999999643E-004 s
+         128 CPU solution time    7.3399999999999854E-004 s
+         242 CPU solution time    9.2700000000000421E-004 s
+         512 CPU solution time    1.3799999999999993E-003 s
+         968 CPU solution time    2.1100000000000008E-003 s
+        2048 CPU solution time    3.8529999999999953E-003 s
+        4050 CPU solution time    7.0489999999999997E-003 s
+        8192 CPU solution time    1.3703999999999966E-002 s
+       16200 CPU solution time    2.7348000000000039E-002 s
+       32768 CPU solution time    5.4451000000000249E-002 s
+       65522 CPU solution time   0.10943399999999981      s
+      131072 CPU solution time   0.21990100000000012      s
+      262088 CPU solution time   0.44277499999999925      s
+      524288 CPU solution time   0.88642000000000110      s

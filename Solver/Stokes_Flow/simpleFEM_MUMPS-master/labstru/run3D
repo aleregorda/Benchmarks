@@ -1,0 +1,9 @@
+make code3D
+./simplefem > opla
+./scr
+mv opla OUT/
+mv *.dat OUT/
+gnuplot gnuplot_script
+mv *.pdf OUT
+
+

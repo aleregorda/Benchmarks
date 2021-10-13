@@ -6,7 +6,7 @@ default: code2D
 
 OBJECTS3D = output_for_paraview3D.o simplefem3D.o
 
-OBJECTS2D = output_for_paraview2D.o simplefem2D.o
+OBJECTS2D = output_for_paraview2D.o simplefem2D_2.o
 
 .f90.o:
 	$(F90) $(FLAGS) $(INCLUDE) $*.f90

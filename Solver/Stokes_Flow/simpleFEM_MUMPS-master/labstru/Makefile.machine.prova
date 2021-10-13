@@ -1,0 +1,27 @@
+
+F90      = mpif90
+
+topdir = /home/vundar/Documenti/MUMPS_5.3.3
+
+MUMPS    = $(topdir)/lib
+PORD     = $(topdir)/PORD/lib
+SRC	 = $(topdir)/src
+MUMPS3   = $(topdir)/include
+METIS	 = /usr/lib
+OPTF	 = -fopenmp -lmpi -lmpi_mpifh -np 4
+SCALAPACK	 = /usr/lib/x86_64-linux-gnu
+LAPACK   = /usr/lib/x86_64-linux-gnu/lapack
+BLAS     = /usr/lib/x86_64-linux-gnu/blas
+
+LIBS = \
+-L$(MUMPS) -ldmumps -lmumps_common \
+-L$(PORD) -lpord \
+-L$(METIS) -lparmetis -lmetis \
+-L$(SCALAPACK) -lscalapack-openmpi \
+-L/usr/lib/x86_64-linux-gnu/libmkl_blacs_openmpi_ilp64.so \
+-L$(LAPACK) -llapack \
+-L$(BLAS) -lblas
+
+INCLUDE = \
+-I$(SRC) \
+-I$(MUMPS3)

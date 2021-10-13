@@ -1,13 +1,19 @@
-           8 analysis time    5.2462000000000009E-002 s
-          32 analysis time    6.2400000000001343E-004 s
-          50 analysis time    5.6899999999998618E-004 s
-         128 analysis time    9.8100000000000964E-004 s
-         242 analysis time    1.3150000000000106E-003 s
-         512 analysis time    2.4300000000000432E-003 s
-         968 analysis time    4.5299999999999230E-003 s
-        2048 analysis time   0.18708499999999995      s
-        4050 analysis time    2.2100000000000009E-002 s
-        8192 analysis time    4.8700000000000188E-002 s
-       16200 analysis time   0.10111400000000081      s
-       32768 analysis time   0.20759599999999878      s
-       65522 analysis time   0.48258799999999979      s
+           8 CPU analysis time    4.4200000000000142E-004 s
+          32 CPU analysis time    3.6600000000000521E-004 s
+          50 CPU analysis time    2.8399999999999259E-004 s
+         128 CPU analysis time    3.5200000000000509E-004 s
+         242 CPU analysis time    4.1399999999999770E-004 s
+         512 CPU analysis time    6.0699999999999643E-004 s
+         968 CPU analysis time    8.3900000000000641E-004 s
+        2048 CPU analysis time    1.5389999999999987E-003 s
+        4050 CPU analysis time    3.1059999999999977E-003 s
+        8192 CPU analysis time    3.8939999999999808E-003 s
+       16200 CPU analysis time    7.1630000000000027E-003 s
+       32768 CPU analysis time    1.5214000000000005E-002 s
+       65522 CPU analysis time    2.7111999999999969E-002 s
+      131072 CPU analysis time    5.9498999999999969E-002 s
+      262088 CPU analysis time   0.11776600000000004      s
+      524288 CPU analysis time   0.24951100000000004      s
+     1048352 CPU analysis time   0.51823599999999992      s
+     2097152 CPU analysis time    1.1883679999999988      s
+     4193408 CPU analysis time    2.2402970000000018      s

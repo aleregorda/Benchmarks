@@ -1,0 +1,459 @@
+======================================================================
+=====[grid is     2    2]=============================================
+======================================================================
+           8 allocate time         1.0000000000010001E-006
+           8 grid setup time       1.0000000000010001E-006
+           8 grid icon time        0.0000000000000000     
+           8 mumps arrays time     0.0000000000000000     
+           8 bc time               1.0000000000010001E-006
+           8 make matrix           3.0000000000030003E-006
+           8 CPU analysis time    4.3599999999999889E-004 s
+           8 eff. analysis time    0.00000000     s
+           8 CPU factor.  time    3.9000000000000146E-004 s
+           8 eff. factor. time    0.00000000     s
+           8 CPU solution time    3.6999999999999533E-004 s
+           8 eff. solution time    3.90625000E-03 s
+           8 CPU total time       1.2330000000000049E-003 s
+           8 eff. total time       3.90625000E-03 s
+           8 estimated RAM needed for the factorization           0 Mb
+           8 effective RAM needed for the factorization           0 Mb
+           8 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      0Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is     4    4]=============================================
+======================================================================
+          32 allocate time         0.0000000000000000     
+          32 grid setup time       1.0000000000010001E-006
+          32 grid icon time        2.0000000000020002E-006
+          32 mumps arrays time     1.0000000000010001E-006
+          32 bc time               0.0000000000000000     
+          32 make matrix           1.5000000000001124E-005
+          32 CPU analysis time    2.6600000000000235E-004 s
+          32 eff. analysis time    0.00000000     s
+          32 CPU factor.  time    3.6900000000000127E-004 s
+          32 eff. factor. time    0.00000000     s
+          32 CPU solution time    3.4200000000000202E-004 s
+          32 eff. solution time    0.00000000     s
+          32 CPU total time       1.0079999999999950E-003 s
+          32 eff. total time       0.00000000     s
+          32 estimated RAM needed for the factorization           0 Mb
+          32 effective RAM needed for the factorization           0 Mb
+          32 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      0Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is     5    5]=============================================
+======================================================================
+          50 allocate time         9.9999999999406119E-007
+          50 grid setup time       1.0000000000010001E-006
+          50 grid icon time        1.0000000000010001E-006
+          50 mumps arrays time     1.0000000000010001E-006
+          50 bc time               1.0000000000010001E-006
+          50 make matrix           2.4999999999997247E-005
+          50 CPU analysis time    2.9500000000000359E-004 s
+          50 eff. analysis time    0.00000000     s
+          50 CPU factor.  time    3.8200000000000039E-004 s
+          50 eff. factor. time    0.00000000     s
+          50 CPU solution time    3.2400000000000484E-004 s
+          50 eff. solution time    0.00000000     s
+          50 CPU total time       1.0369999999999963E-003 s
+          50 eff. total time       0.00000000     s
+          50 estimated RAM needed for the factorization           0 Mb
+          50 effective RAM needed for the factorization           0 Mb
+          50 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      0Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is     8    8]=============================================
+======================================================================
+         128 allocate time         1.0000000000010001E-006
+         128 grid setup time       0.0000000000000000     
+         128 grid icon time        9.9999999999406119E-007
+         128 mumps arrays time     3.9999999999970615E-006
+         128 bc time               1.0000000000010001E-006
+         128 make matrix           7.5999999999999679E-005
+         128 CPU analysis time    3.7700000000000233E-004 s
+         128 eff. analysis time    0.00000000     s
+         128 CPU factor.  time    5.3000000000000269E-004 s
+         128 eff. factor. time    3.90625000E-03 s
+         128 CPU solution time    3.9900000000000352E-004 s
+         128 eff. solution time    0.00000000     s
+         128 CPU total time       1.3429999999999970E-003 s
+         128 eff. total time       3.90625000E-03 s
+         128 estimated RAM needed for the factorization           0 Mb
+         128 effective RAM needed for the factorization           0 Mb
+         128 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      0Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    11   11]=============================================
+======================================================================
+         242 allocate time         1.9999999999950613E-006
+         242 grid setup time       1.0000000000010001E-006
+         242 grid icon time        1.0000000000010001E-006
+         242 mumps arrays time     1.9999999999950613E-006
+         242 bc time               1.0000000000010001E-006
+         242 make matrix           1.4700000000000130E-004
+         242 CPU analysis time    4.4999999999999901E-004 s
+         242 eff. analysis time    0.00000000     s
+         242 CPU factor.  time    8.2000000000000128E-004 s
+         242 eff. factor. time    0.00000000     s
+         242 CPU solution time    5.2399999999999669E-004 s
+         242 eff. solution time    0.00000000     s
+         242 CPU total time       1.8300000000000052E-003 s
+         242 eff. total time       0.00000000     s
+         242 estimated RAM needed for the factorization           0 Mb
+         242 effective RAM needed for the factorization           0 Mb
+         242 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      0Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    16   16]=============================================
+======================================================================
+         512 allocate time         8.0000000000010618E-006
+         512 grid setup time       1.0000000000010001E-006
+         512 grid icon time        9.9999999999406119E-007
+         512 mumps arrays time     4.9999999999980616E-006
+         512 bc time               1.9999999999950613E-006
+         512 make matrix           3.2800000000000190E-004
+         512 CPU analysis time    6.9400000000000017E-004 s
+         512 eff. analysis time    0.00000000     s
+         512 CPU factor.  time    1.7870000000000039E-003 s
+         512 eff. factor. time    0.00000000     s
+         512 CPU solution time    7.5000000000000067E-004 s
+         512 eff. solution time    3.90625000E-03 s
+         512 CPU total time       3.2649999999999971E-003 s
+         512 eff. total time       3.90625000E-03 s
+         512 estimated RAM needed for the factorization           0 Mb
+         512 effective RAM needed for the factorization           0 Mb
+         512 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      1Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      1Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      0Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    22   22]=============================================
+======================================================================
+         968 allocate time         2.0000000000020002E-006
+         968 grid setup time       2.0000000000020002E-006
+         968 grid icon time        1.0000000000010001E-006
+         968 mumps arrays time     5.9999999999990616E-006
+         968 bc time               2.9999999999960614E-006
+         968 make matrix           6.6000000000000086E-004
+         968 CPU analysis time    9.9599999999999689E-004 s
+         968 eff. analysis time    3.90625000E-03 s
+         968 CPU factor.  time    2.5810000000000000E-003 s
+         968 eff. factor. time    0.00000000     s
+         968 CPU solution time    9.1399999999999815E-004 s
+         968 eff. solution time    0.00000000     s
+         968 CPU total time       4.5270000000000032E-003 s
+         968 eff. total time       3.90625000E-03 s
+         968 estimated RAM needed for the factorization           1 Mb
+         968 effective RAM needed for the factorization           1 Mb
+         968 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      2Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      2Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      2Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    32   32]=============================================
+======================================================================
+        2048 allocate time         3.0000000000030003E-006
+        2048 grid setup time       2.0000000000020002E-006
+        2048 grid icon time        2.0000000000020002E-006
+        2048 mumps arrays time     4.0000000000040004E-006
+        2048 bc time               6.0000000000060005E-006
+        2048 make matrix           1.5060000000000004E-003
+        2048 CPU analysis time    1.7249999999999904E-003 s
+        2048 eff. analysis time    0.00000000     s
+        2048 CPU factor.  time    7.7900000000000053E-003 s
+        2048 eff. factor. time    7.81250000E-03 s
+        2048 CPU solution time    1.8989999999999979E-003 s
+        2048 eff. solution time    3.90625000E-03 s
+        2048 CPU total time       1.1452999999999991E-002 s
+        2048 eff. total time       1.17187500E-02 s
+        2048 estimated RAM needed for the factorization           1 Mb
+        2048 effective RAM needed for the factorization           1 Mb
+        2048 effective RAM needed for the solution                0 Mb
+estimated RAM needed for the factorization:      2Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      2Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      2Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      0Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    45   45]=============================================
+======================================================================
+        4050 allocate time         4.0000000000040004E-006
+        4050 grid setup time       4.0000000000040004E-006
+        4050 grid icon time        6.0000000000060005E-006
+        4050 mumps arrays time     1.4000000000000123E-005
+        4050 bc time               1.0000000000010001E-005
+        4050 make matrix           2.9870000000000035E-003
+        4050 CPU analysis time    3.1079999999999997E-003 s
+        4050 eff. analysis time    3.90625000E-03 s
+        4050 CPU factor.  time    1.6299999999999995E-002 s
+        4050 eff. factor. time    1.56250000E-02 s
+        4050 CPU solution time    3.6749999999999977E-003 s
+        4050 eff. solution time    3.90625000E-03 s
+        4050 CPU total time       2.3137000000000005E-002 s
+        4050 eff. total time       2.34375000E-02 s
+        4050 estimated RAM needed for the factorization           3 Mb
+        4050 effective RAM needed for the factorization           3 Mb
+        4050 effective RAM needed for the solution                1 Mb
+estimated RAM needed for the factorization:      5Mb (sum over all MPI processes)
+RAM allocated        for the factorization:      5Mb (sum over all MPI processes)
+effective RAM needed for the factorization:      5Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      2Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    64   64]=============================================
+======================================================================
+        8192 allocate time         4.9999999999772449E-006
+        8192 grid setup time       1.5000000000015001E-005
+        8192 grid icon time        1.1999999999984245E-005
+        8192 mumps arrays time     3.2000000000004247E-005
+        8192 bc time               2.1999999999994246E-005
+        8192 make matrix           6.1009999999999953E-003
+        8192 CPU analysis time    5.8779999999999943E-003 s
+        8192 eff. analysis time    3.90625000E-03 s
+        8192 CPU factor.  time    5.3521000000000013E-002 s
+        8192 eff. factor. time    5.46875000E-02 s
+        8192 CPU solution time    8.2969999999999988E-003 s
+        8192 eff. solution time    7.81250000E-03 s
+        8192 CPU total time       6.7766999999999994E-002 s
+        8192 eff. total time       6.64062500E-02 s
+        8192 estimated RAM needed for the factorization           5 Mb
+        8192 effective RAM needed for the factorization           6 Mb
+        8192 effective RAM needed for the solution                3 Mb
+estimated RAM needed for the factorization:     11Mb (sum over all MPI processes)
+RAM allocated        for the factorization:     12Mb (sum over all MPI processes)
+effective RAM needed for the factorization:     11Mb (sum over all MPI processes)
+effective RAM needed for the solution     :      7Mb (sum over all MPI processes)
+======================================================================
+=====[grid is    90   90]=============================================
+======================================================================
+       16200 allocate time         3.0000000000030003E-006
+       16200 grid setup time       1.3999999999986246E-005
+       16200 grid icon time        2.6999999999999247E-005
+       16200 mumps arrays time     6.2000000000006494E-005
+       16200 bc time               4.2999999999987493E-005
+       16200 make matrix           1.2506000000000017E-002
+       16200 CPU analysis time    1.2115000000000042E-002 s
+       16200 eff. analysis time    1.17187500E-02 s
+       16200 CPU factor.  time   0.10241800000000001      s
+       16200 eff. factor. time   0.101562500     s
+       16200 CPU solution time    1.4573999999999976E-002 s
+       16200 eff. solution time    1.56250000E-02 s
+       16200 CPU total time      0.12917600000000001      s
+       16200 eff. total time      0.128906250     s
+       16200 estimated RAM needed for the factorization          11 Mb
+       16200 effective RAM needed for the factorization          11 Mb
+       16200 effective RAM needed for the solution                9 Mb
+estimated RAM needed for the factorization:     20Mb (sum over all MPI processes)
+RAM allocated        for the factorization:     21Mb (sum over all MPI processes)
+effective RAM needed for the factorization:     20Mb (sum over all MPI processes)
+effective RAM needed for the solution     :     16Mb (sum over all MPI processes)
+======================================================================
+=====[grid is   128  128]=============================================
+======================================================================
+       32768 allocate time         4.0000000000040004E-006
+       32768 grid setup time       2.4000000000024002E-005
+       32768 grid icon time        5.4999999999971738E-005
+       32768 mumps arrays time     1.3400000000002299E-004
+       32768 bc time               7.9999999999968985E-005
+       32768 make matrix           2.5496000000000019E-002
+       32768 CPU analysis time    2.5465999999999933E-002 s
+       32768 eff. analysis time    2.34375000E-02 s
+       32768 CPU factor.  time   0.24353299999999989      s
+       32768 eff. factor. time   0.246093750     s
+       32768 CPU solution time    2.5503999999999971E-002 s
+       32768 eff. solution time    2.34375000E-02 s
+       32768 CPU total time      0.29457600000000006      s
+       32768 eff. total time      0.292968750     s
+       32768 estimated RAM needed for the factorization          22 Mb
+       32768 effective RAM needed for the factorization          22 Mb
+       32768 effective RAM needed for the solution               19 Mb
+estimated RAM needed for the factorization:     41Mb (sum over all MPI processes)
+RAM allocated        for the factorization:     43Mb (sum over all MPI processes)
+effective RAM needed for the factorization:     39Mb (sum over all MPI processes)
+effective RAM needed for the solution     :     34Mb (sum over all MPI processes)
+======================================================================
+=====[grid is   181  181]=============================================
+======================================================================
+       65522 allocate time         4.0000000000040004E-006
+       65522 grid setup time       1.1499999999997623E-004
+       65522 grid icon time        1.1800000000006250E-004
+       65522 mumps arrays time     3.9000000000000146E-004
+       65522 bc time               1.5200000000004099E-004
+       65522 make matrix           5.1610999999999962E-002
+       65522 CPU analysis time    4.8534999999999995E-002 s
+       65522 eff. analysis time    5.07812500E-02 s
+       65522 CPU factor.  time   0.88437500000000013      s
+       65522 eff. factor. time   0.882812500     s
+       65522 CPU solution time    5.1695000000000046E-002 s
+       65522 eff. solution time    5.46875000E-02 s
+       65522 CPU total time      0.98468099999999992      s
+       65522 eff. total time      0.988281250     s
+       65522 estimated RAM needed for the factorization          52 Mb
+       65522 effective RAM needed for the factorization          48 Mb
+       65522 effective RAM needed for the solution               46 Mb
+estimated RAM needed for the factorization:    102Mb (sum over all MPI processes)
+RAM allocated        for the factorization:    107Mb (sum over all MPI processes)
+effective RAM needed for the factorization:     91Mb (sum over all MPI processes)
+effective RAM needed for the solution     :     90Mb (sum over all MPI processes)
+======================================================================
+=====[grid is   256  256]=============================================
+======================================================================
+      131072 allocate time         4.0000000001150227E-006
+      131072 grid setup time       1.9500000000016726E-004
+      131072 grid icon time        1.9899999999983820E-004
+      131072 mumps arrays time     4.9600000000005195E-004
+      131072 bc time               3.4899999999993270E-004
+      131072 make matrix          0.10377799999999970     
+      131072 CPU analysis time   0.11242899999999967      s
+      131072 eff. analysis time   0.113281250     s
+      131072 CPU factor.  time    1.7915670000000001      s
+      131072 eff. factor. time    1.79296875     s
+      131072 CPU solution time   0.10582999999999920      s
+      131072 eff. solution time   0.105468750     s
+      131072 CPU total time       2.0098940000000001      s
+      131072 eff. total time       2.01171875     s
+      131072 estimated RAM needed for the factorization          94 Mb
+      131072 effective RAM needed for the factorization          89 Mb
+      131072 effective RAM needed for the solution               84 Mb
+estimated RAM needed for the factorization:    195Mb (sum over all MPI processes)
+RAM allocated        for the factorization:    205Mb (sum over all MPI processes)
+effective RAM needed for the factorization:    177Mb (sum over all MPI processes)
+effective RAM needed for the solution     :    173Mb (sum over all MPI processes)
+======================================================================
+=====[grid is   362  362]=============================================
+======================================================================
+      262088 allocate time         3.9999999996709334E-006
+      262088 grid setup time       4.7599999999992093E-004
+      262088 grid icon time        5.5500000000030525E-004
+      262088 mumps arrays time     1.2590000000001211E-003
+      262088 bc time               8.3199999999994390E-004
+      262088 make matrix          0.20893700000000059     
+      262088 CPU analysis time   0.21638400000000058      s
+      262088 eff. analysis time   0.218750000     s
+      262088 CPU factor.  time    4.6605469999999993      s
+      262088 eff. factor. time    4.66406250     s
+      262088 CPU solution time   0.20422099999999865      s
+      262088 eff. solution time   0.207031250     s
+      262088 CPU total time       5.0812259999999991      s
+      262088 eff. total time       5.08984375     s
+      262088 estimated RAM needed for the factorization         196 Mb
+      262088 effective RAM needed for the factorization         195 Mb
+      262088 effective RAM needed for the solution              177 Mb
+estimated RAM needed for the factorization:    392Mb (sum over all MPI processes)
+RAM allocated        for the factorization:    411Mb (sum over all MPI processes)
+effective RAM needed for the factorization:    367Mb (sum over all MPI processes)
+effective RAM needed for the solution     :    352Mb (sum over all MPI processes)
+======================================================================
+=====[grid is   512  512]=============================================
+======================================================================
+      524288 allocate time         3.9999999987827550E-006
+      524288 grid setup time       9.2899999999929150E-004
+      524288 grid icon time        9.4999999999956231E-004
+      524288 mumps arrays time     2.9210000000006175E-003
+      524288 bc time               1.6130000000007527E-003
+      524288 make matrix          0.41487700000000061     
+      524288 CPU analysis time   0.55242300000000100      s
+      524288 eff. analysis time   0.550781250     s
+      524288 CPU factor.  time    11.126740000000000      s
+      524288 eff. factor. time    11.1367188     s
+      524288 CPU solution time   0.44307399999999930      s
+      524288 eff. solution time   0.445312500     s
+      524288 CPU total time       12.122309000000000      s
+      524288 eff. total time       12.1328125     s
+      524288 estimated RAM needed for the factorization         439 Mb
+      524288 effective RAM needed for the factorization         416 Mb
+      524288 effective RAM needed for the solution              401 Mb
+estimated RAM needed for the factorization:    820Mb (sum over all MPI processes)
+RAM allocated        for the factorization:    855Mb (sum over all MPI processes)
+effective RAM needed for the factorization:    737Mb (sum over all MPI processes)
+effective RAM needed for the solution     :    743Mb (sum over all MPI processes)
+======================================================================
+=====[grid is   724  724]=============================================
+======================================================================
+     1048352 allocate time         6.0000000026150246E-006
+     1048352 grid setup time       1.9359999999970512E-003
+     1048352 grid icon time        2.1379999999986410E-003
+     1048352 mumps arrays time     8.6200000000005161E-003
+     1048352 bc time               3.0999999999998806E-003
+     1048352 make matrix          0.82942800000000005     
+     1048352 CPU analysis time    1.0273219999999981      s
+     1048352 eff. analysis time    1.02734375     s
+     1048352 CPU factor.  time    61.067357999999992      s
+     1048352 eff. factor. time    61.1171875     s
+     1048352 CPU solution time   0.93732900000000541      s
+     1048352 eff. solution time   0.937500000     s
+     1048352 CPU total time       63.032088999999999      s
+     1048352 eff. total time       63.0820312     s
+     1048352 estimated RAM needed for the factorization        1061 Mb
+     1048352 effective RAM needed for the factorization         973 Mb
+     1048352 effective RAM needed for the solution              985 Mb
+estimated RAM needed for the factorization:   2085Mb (sum over all MPI processes)
+RAM allocated        for the factorization:   2154Mb (sum over all MPI processes)
+effective RAM needed for the factorization:   1870Mb (sum over all MPI processes)
+effective RAM needed for the solution     :   1933Mb (sum over all MPI processes)
+======================================================================
+=====[grid is  1024 1024]=============================================
+======================================================================
+     2097152 allocate time         5.0000000015870683E-006
+     2097152 grid setup time       4.3369999999924858E-003
+     2097152 grid icon time        4.8389999999898237E-003
+     2097152 mumps arrays time     2.2727000000003272E-002
+     2097152 bc time               6.8660000000022592E-003
+     2097152 make matrix           1.6571579999999955     
+     2097152 CPU analysis time    2.3660220000000010      s
+     2097152 eff. analysis time    2.37109375     s
+     2097152 CPU factor.  time    84.091959999999986      s
+     2097152 eff. factor. time    84.1601562     s
+     2097152 CPU solution time    1.7197029999999813      s
+     2097152 eff. solution time    1.72265625     s
+     2097152 CPU total time       88.177762000000016      s
+     2097152 eff. total time       88.2539062     s
+     2097152 estimated RAM needed for the factorization        1786 Mb
+     2097152 effective RAM needed for the factorization        1667 Mb
+     2097152 effective RAM needed for the solution             1649 Mb
+estimated RAM needed for the factorization:   3579Mb (sum over all MPI processes)
+RAM allocated        for the factorization:   3729Mb (sum over all MPI processes)
+effective RAM needed for the factorization:   3223Mb (sum over all MPI processes)
+effective RAM needed for the solution     :   3284Mb (sum over all MPI processes)
+======================================================================
+=====[grid is  1448 1448]=============================================
+======================================================================
+     4193408 allocate time         1.7000000013922545E-005
+     4193408 grid setup time       9.8199999999906140E-003
+     4193408 grid icon time        9.8619999999982610E-003
+     4193408 mumps arrays time     4.5635000000004311E-002
+     4193408 bc time               1.2700000000023692E-002
+     4193408 make matrix           3.3532939999999769     
+     4193408 CPU analysis time    4.4309420000000159      s
+     4193408 eff. analysis time    4.44531250     s
+     4193408 CPU factor.  time    257.28076800000002      s
+     4193408 eff. factor. time    257.484375     s
+     4193408 CPU solution time    3.5811729999999784      s
+     4193408 eff. solution time    3.58203125     s
+     4193408 CPU total time       265.29294800000002      s
+     4193408 eff. total time       265.511719     s
+     4193408 estimated RAM needed for the factorization        3792 Mb
+     4193408 effective RAM needed for the factorization        3581 Mb
+     4193408 effective RAM needed for the solution             3526 Mb
+estimated RAM needed for the factorization:   7737Mb (sum over all MPI processes)
+RAM allocated        for the factorization:   8050Mb (sum over all MPI processes)
+effective RAM needed for the factorization:   6915Mb (sum over all MPI processes)
+effective RAM needed for the solution     :   7141Mb (sum over all MPI processes)
+======================================================================
+ Total run time               482.554688     s
+======================================================================
