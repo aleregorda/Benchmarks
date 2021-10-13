@@ -1,0 +1,35 @@
+set term pdf size 10,3 enhanced
+set output 'cvi.pdf'
+set multiplot
+#MARKERS
+set origin 0.0,0.0
+set size 0.5,1
+set title '{/Helvetic=10 Number of Markers}'
+set key center right
+set grid
+set xlabel offset 0,1 '{/Helvetic=10 Time}'
+set ylabel offset 1,0 '{/Helvetic=10 n° of markers}'
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics 5 offset 0.5,0 font 'Helvetic,8'
+plot[0:2000][0:60]\
+'./no_CVI/CVI.txt' u 2:3 w l lc 1 t '{/Helvetic=8 no CVI}',\
+'./no_CVI/CVI.txt' u 2:4 w l lc 1 t '',\
+'./CVI/CVI.txt' u 2:3 w l lc 2 t '{/Helvetic=8 CVI}',\
+'./CVI/CVI.txt' u 2:4 w l lc 2 t ''
+reset
+#DEVIATION
+set origin 0.5,0.0
+set size 0.5,1
+set title '{/Helvetic=10 Standard Deviation}'
+set key center right
+set grid
+set xlabel offset 0,1 '{/Helvetic=10 Time}'
+set ylabel offset 1,0 '{/Helvetic=10 n(t)/n_0}'
+set xtics 100 offset 0,0.5 font 'Helvetic,8'
+set ytics 0.5 offset 0.5,0 font 'Helvetic,8'
+plot[0:2000][0:2.5]\
+'./no_CVI/CVI.txt' u 2:($3/25) w l lc 1 t '{/Helvetic=8 no CVI}',\
+'./no_CVI/CVI.txt' u 2:($4/25) w l lc 1 t '',\
+'./CVI/CVI.txt' u 2:($3/25) w l lc 2 t '{/Helvetic=8 CVI}',\
+'./CVI/CVI.txt' u 2:($4/25) w l lc 2 t ''
+unset multiplot
