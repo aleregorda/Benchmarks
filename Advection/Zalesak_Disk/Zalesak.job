@@ -4,38 +4,11 @@ gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
 gmt gmtset MAP_LABEL_OFFSET 0.2c
 gmt gmtset MAP_TITLE_OFFSET 0.5c
 
-gmt makecpt -Cdevon -T0/2/0.5 -I > Density.cpt
-
 PS=Zalesak.eps
 
 gmt psbasemap -R0/1/0/1 -JX5/5 -Bwnse -X2 -Y18 -K -P > $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./100x100/CFL_0.5/Marcatori.00201.txt | gmt psxy -R -JX -O -Sc0.015 -Gred -K >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./100x100/CFL_0.25/Marcatori.00401.txt | gmt psxy -R -JX -O -Sc0.015 -Ggreen -K >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./100x100/CFL_0.1/Marcatori.01001.txt | gmt psxy -R -JX -O -Sc0.015 -Gblue -K >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./100x100/CFL_0.1/Marcatori.00001.txt | gmt psxy -R -JX -O -Ss0.015 -Gorange >> $PS
-
-rm gmt.* 
-
-exit
-
-gmt psbasemap -R0/1/0/1 -JX5/5 -Bwnse -X2 -Y18 -K -P > $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./Marcatori.00001.txt | gmt psxy -R -JX -O -Ss0.015 -CDensity -K >> $PS
-awk '{if(NR==1) print(0.075,0.175,"a)")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-awk '{if(NR==1) print(0.09,0.075,"t=0")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-
-gmt psbasemap -R0/1/0/1 -JX5/5 -Bwnse -X5.5 -K -P -O >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./Marcatori.00051.txt | gmt psxy -R -JX -O -Sc0.015 -CDensity -K >> $PS
-awk '{if(NR==1) print(0.075,0.175,"b)")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-awk '{if(NR==1) print(0.1325,0.075,"t=0.25")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-
-gmt psbasemap -R0/1/0/1 -JX5/5 -Bwnse -X-5.5 -Y-5.5 -K -P -O >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./Marcatori.00151.txt | gmt psxy -R -JX -O -Sc0.015 -CDensity -K >> $PS
-awk '{if(NR==1) print(0.075,0.175,"d)")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-awk '{if(NR==1) print(0.1325,0.075,"t=0.75")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-
-gmt psbasemap -R0/1/0/1 -JX5/5 -Bwnse -X5.5 -K -P -O >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./Marcatori.00101.txt | gmt psxy -R -JX -O -Sc0.015 -CDensity -K >> $PS
-awk '{if(NR==1) print(0.075,0.175,"c)")}' ./Marcatori.00001.txt | gmt pstext -K -O -R -JX >> $PS
-awk '{if(NR==1) print(0.115,0.075,"t=0.5")}' ./Marcatori.00001.txt | gmt pstext -O -R -JX >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./RK=4/CFL_0.5/Marcatori.00004.txt | gmt psxy -R -JX -O -Sc0.015 -Gred -K >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./RK=4/CFL_0.25/Marcatori.00004.txt | gmt psxy -R -JX -O -Sc0.015 -Ggreen -K >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./RK=4/CFL_0.5/Marcatori.00000.txt | gmt psxy -R -JX -O -Ss0.015 -Gorange >> $PS
 
 rm gmt.*

@@ -4,34 +4,30 @@ gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
 gmt gmtset MAP_LABEL_OFFSET 0.2c
 gmt gmtset MAP_TITLE_OFFSET 0.5c
 
-gmt makecpt -Cdevon -T0/2/0.5 -I > Density.cpt
-
-PS=Zalesak_error.eps
-
-awk '{if(NR>2 && $4==2) print($2,$3)}' ./100x100/CFL_0.5/Marcatori.00001.txt > marc0.tmp
-awk '{if(NR>2 && $4==2) print($2,$3)}' ./100x100/CFL_0.5/Marcatori.00201.txt > marc5.tmp
-awk '{if(NR>2 && $4==2) print($2,$3)}' ./100x100/CFL_0.25/Marcatori.00401.txt > marc25.tmp
-awk '{if(NR>2 && $4==2) print($2,$3)}' ./100x100/CFL_0.1/Marcatori.01001.txt > marc1.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=4/CFL_0.5/Marcatori.00000.txt > marc0.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=4/CFL_0.5/Marcatori.00004.txt > marc5.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=4/CFL_0.25/Marcatori.00004.txt > marc25.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=4/CFL_1/Marcatori.00004.txt > marc1.tmp
 
 paste marc0.tmp marc5.tmp > error_0.5.tmp
 paste marc0.tmp marc25.tmp > error_0.25.tmp
-paste marc0.tmp marc1.tmp > error_0.1.tmp
+paste marc0.tmp marc25.tmp > error_1.tmp
 
-awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.5.tmp > error_0.5_100
-awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.25.tmp > error_0.25_100
-awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.1.tmp > error_0.1_100
+awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.5.tmp > error_0.5_RK4
+awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.25.tmp > error_0.25_RK4
+awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_1.tmp > error_1_RK4
 
-#awk '{if(NR>2 && $4==2 && $2>=0.473 && $2<=0.475) print($2,$3,$1)}' ./200x200/CFL_0.1/Marcatori.00001.txt > marc0.tmp
-#awk '{if(NR>2 && $4==2 && $2>=0.473 && $2<=0.475) print($2,$3,$1)}' ./200x200/CFL_0.5/Marcatori.00801.txt > marc5.tmp
-#awk '{if(NR>2 && $4==2 && $2>=0.473 && $2<=0.475) print($2,$3,$1)}' ./200x200/CFL_0.25/Marcatori.01601.txt > marc25.tmp
-#awk '{if(NR>2 && $4==2 && $2>=0.473 && $2<=0.475) print($2,$3,$1)}' ./200x200/CFL_0.1/Marcatori.04001.txt > marc1.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=2/CFL_0.5/Marcatori.00000.txt > marc0.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=2/CFL_0.5/Marcatori.00004.txt > marc5.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=2/CFL_0.25/Marcatori.00004.txt > marc25.tmp
+awk '{if(NR>2 && $4==2) print($2,$3)}' ./RK=2/CFL_1/Marcatori.00004.txt > marc1.tmp
 
-paste ./200x200/CFL_0.5/marc0.0.5 ./200x200/CFL_0.5/marc1.0.5 > error_0.5.tmp
-paste ./200x200/CFL_0.25/marc0.0.25 ./200x200/CFL_0.25/marc1.0.25 > error_0.25.tmp
-paste ./200x200/CFL_0.1/marc0.0.1 ./200x200/CFL_0.1/marc1.0.1 > error_0.1.tmp
+paste marc0.tmp marc5.tmp > error_0.5.tmp
+paste marc0.tmp marc25.tmp > error_0.25.tmp
+paste marc0.tmp marc25.tmp > error_1.tmp
 
-awk '{print($1,$2,$4,$5)}' error_0.5.tmp > error_0.5_200
-awk '{print($1,$2,$4,$5)}' error_0.25.tmp > error_0.25_200
-awk '{print($1,$2,$4,$5)}' error_0.1.tmp > error_0.1_200
+awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.5.tmp > error_0.5_RK2
+awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_0.25.tmp > error_0.25_RK2
+awk '{if($1>=0.473 && $1<=0.475) print($0)}' error_1.tmp > error_1_RK2
 
 rm *.tmp
