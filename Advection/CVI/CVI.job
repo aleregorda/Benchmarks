@@ -1,0 +1,49 @@
+gmt gmtset PS_MEDIA a4
+gmt gmtset FONT_TITLE 12p FONT_ANNOT_PRIMARY 8p FONT_ANNOT_SECONDARY 8p FONT_LABEL 10p
+gmt gmtset MAP_ANNOT_OFFSET_PRIMARY 0.1c
+gmt gmtset MAP_LABEL_OFFSET 0.2c
+gmt gmtset MAP_TITLE_OFFSET 0.5c
+
+gmt makecpt -Clajolla -T1/7/1 > markers.cpt
+gmt makecpt -Ccork -T0/60/5 > numbers.cpt
+
+PS=CVI_time.eps
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X1.2 -Y18 -K -P > $PS
+awk '{if(NR>2) print($2,$3)}' ./RK=2_CFL=0.5/CVI/TXT/Elementi.00000.txt > xy.tmp
+awk '{if(NR>8542 && NR<9567) print($0)}' ./RK=2_CFL=0.5/CVI/VTK/Solution.00000.vtu > num.tmp
+paste xy.tmp num.tmp > tmp.tmp
+gmt psxy tmp.tmp -R -JX -O -Ss0.15 -Cnumbers -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3)}' ./RK=2_CFL=0.5/CVI/TXT/Elementi.00010.txt > xy.tmp
+awk '{if(NR>8542 && NR<9567) print($0)}' ./RK=2_CFL=0.5/no_CVI/VTK/Solution.00010.vtu > num.tmp
+paste xy.tmp num.tmp > tmp.tmp
+gmt psxy tmp.tmp -R -JX -O -Ss0.15 -Cnumbers -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3)}' ./RK=2_CFL=0.5/CVI/TXT/Elementi.00010.txt > xy.tmp
+awk '{if(NR>8542 && NR<9567) print($0)}' ./RK=2_CFL=0.5/CVI/VTK/Solution.00010.vtu > num.tmp
+paste xy.tmp num.tmp > tmp.tmp
+gmt psxy tmp.tmp -R -JX -O -Ss0.15 -Cnumbers -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3)}' ./RK=2_CFL=0.5/CVI/TXT/Elementi.00000.txt > xy.tmp
+awk '{if(NR>8542 && NR<9567) print($0)}' ./RK=2_CFL=0.5/CVI/VTK/Solution.00031.vtu > num.tmp
+paste xy.tmp num.tmp > tmp.tmp
+gmt psxy tmp.tmp -R -JX -O -Ss0.15 -Cnumbers -K >> $PS
+gmt psscale -Cnumbers -O -Dx3.2/1.5/3/0.2 -Ba10f5:"N\232 of markers": -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X-9.6 -Y-3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$4)}' ./RK=2_CFL=0.5/CVI/TXT/Marcatori.00000.txt | gmt psxy -R -JX -O -Ss0.035 -Cmarkers -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$4)}' ./RK=2_CFL=0.5/no_CVI/TXT/Marcatori.00010.txt | gmt psxy -R -JX -O -Ss0.035 -Cmarkers -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$4)}' ./RK=2_CFL=0.5/CVI/TXT/Marcatori.00010.txt | gmt psxy -R -JX -O -Ss0.035 -Cmarkers -K >> $PS
+
+gmt psbasemap -R0/1/0/1 -JX3/3 -Bx2f0.1 -By1f0.1 -Bwsne -X3.2 -K -P -O >> $PS
+awk '{if(NR>2) print($2,$3,$4)}' ./RK=2_CFL=0.5/CVI/TXT/Marcatori.00031.txt | gmt psxy -R -JX -O -Ss0.035 -Cmarkers >> $PS
+
+rm *.cpt gmt.*

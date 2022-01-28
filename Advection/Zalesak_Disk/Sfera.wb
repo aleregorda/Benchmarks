@@ -6,7 +6,7 @@
   [
 
     {"model":"continental plate", "name":"continental plate", "coordinates":[[0e0,-1e0],[1e0,-1e0],[1e0,1e0],[0e0,1e0]],
-     "temperature models":[{"model":"linear", "max depth":1e0, "top temperature":0, "bottom temperature":0}],
+     "temperature models":[{"model":"linear", "max depth":1e0, "top temperature":0, "bottom temperature":1}],
      "composition models":[{"model":"uniform", "compositions":[1], "max depth":1e0}]}
 
   ]

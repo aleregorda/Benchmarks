@@ -7,8 +7,10 @@ gmt gmtset MAP_TITLE_OFFSET 0.5c
 PS=Zalesak.eps
 
 gmt psbasemap -R0/1/0/1 -JX5/5 -Bwnse -X2 -Y18 -K -P > $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./RK=4/CFL_0.5/Marcatori.00004.txt | gmt psxy -R -JX -O -Sc0.015 -Gred -K >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./RK=4/CFL_0.25/Marcatori.00004.txt | gmt psxy -R -JX -O -Sc0.015 -Ggreen -K >> $PS
-awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./RK=4/CFL_0.5/Marcatori.00000.txt | gmt psxy -R -JX -O -Ss0.015 -Gorange >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./txt_files/Marcatori.00000.txt | gmt psxy -R -JX -O -Sc0.015 -Gorange -K >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./txt_files/Marcatori.00251.txt | gmt psxy -R -JX -O -Sc0.015 -Gred -K >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./txt_files/Marcatori.00499.txt | gmt psxy -R -JX -O -Ss0.015 -Gblue -K >> $PS
+awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./txt_files/Marcatori.00748.txt | gmt psxy -R -JX -O -Ss0.015 -Ggreen >> $PS
+#awk '{if(NR>2 && $4==2) print($2,$3,$4)}' ./txt_files/Marcatori.00999.txt | gmt psxy -R -JX -O -Sc0.015 -Gred >> $PS
 
 rm gmt.*

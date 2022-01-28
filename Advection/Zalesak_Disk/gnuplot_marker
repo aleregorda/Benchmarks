@@ -1,0 +1,14 @@
+set term pdf enhanced
+set output 'zal_marker.pdf'
+set xtics 0.1 offset 0,0.5 font 'Helvetic,6'
+set ytics 0.0000005 offset 0.5,0 font 'Helvetic,6' add ('R' 0.39850031)
+set grid
+set key top left
+set xlabel offset 0,1 '{/Helvetic=8 Time}'
+set ylabel offset 3.5,0 '{/Helvetic=8 Distance}'
+plot[0:1][0.3985:0.398503]\
+'Raggio.txt_1' u 1:4 t '{/Helvetic=8 CFL=1}' w l lc 'red',\
+'Raggio.txt_0.75' u 1:4 t '{/Helvetic=8 CFL=0.75}' w l lc 'black',\
+'Raggio.txt_0.5' u 1:4 t '{/Helvetic=8 CFL=0.5}' w l lc 'blue',\
+'Raggio.txt_0.3' u 1:4 t '{/Helvetic=8 CFL=0.3}' w l lc 'orange',\
+'Raggio.txt_0.25' u 1:4 t '{/Helvetic=8 CFL=0.25}' w l lc 'green'
