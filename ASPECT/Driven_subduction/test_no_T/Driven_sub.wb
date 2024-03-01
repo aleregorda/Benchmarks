@@ -1,0 +1,36 @@
+{
+  "version":"0.5",
+  "coordinate system":{"model":"cartesian"},
+  "cross section":[[0,0],[100,0]],
+  "features":
+[
+    {"model":"oceanic plate", "name":"oceanic plate", "coordinates":[[1382.9e3,-1e0],[3000e3,-1e0],[3000e3,1e0],[1382.9e3,1e0]],
+     "temperature models":[{"model":"linear", "min depth":0e3, "max depth":670e3, "top temperature":273.15, "bottom temperature":273.15}],
+     "composition models":[{"model":"uniform", "compositions":[2], "max depth":12e3},
+                           {"model":"uniform", "compositions":[3], "min depth":12e3, "max depth":110e3},
+                           {"model":"uniform", "compositions":[4], "min depth":110e3, "max depth":670e3}]},
+
+    {"model":"continental plate", "name":"continental plate", "coordinates":[[0e0,-1e0],[1382.9e3,-1e0],[1382.9e3,1e0],[0e0,1e0]],
+    "composition models":[{"model":"uniform", "compositions":[1], "max depth":82e3}]},
+
+    {"model":"continental plate", "name":"transition continent", "coordinates":[[1382.9e0,-1e0],[1451.2e3,-1e0],[1451.2e3,1e0],[1382.9e0,1e0]],
+    "composition models":[{"model":"uniform", "compositions":[1], "max depth":[[82e3,[[1382.9e3,0e3]]],[0e3,[[1451.2e3,0e3]]]]}]},
+
+    {"model":"subducting plate", "name":"Subducting plate", "coordinates":[[1451.2e3,-1e3],[1451.2e3,1e3]], "dip point":[1000e3,0],
+     "segments":[{"length":150e3, "thickness":[12e3], "angle":[35]}],
+     "composition models":[{"model":"uniform", "compositions":[2], "max distance slab top":12e3}]},
+
+    {"model":"subducting plate", "name":"Subducting plate", "coordinates":[[1470e3,-1e3],[1470e3,1e3]], "dip point":[1000e3,0],
+     "segments":[{"length":150e3, "thickness":[17e3], "angle":[35]}],
+     "composition models":[{"model":"uniform", "compositions":[2], "max distance slab top":17e3}]},
+
+    {"model":"mantle layer", "name":"mantle oc", "coordinates":[[0e3,-1e3],[1382.9e3,-1e3],[1382.9e3,1e3],[0e3,1e3]],
+     "temperature models":[{"model":"linear", "min depth":0e3, "max depth":670e3, "top temperature":273.15, "bottom temperature":273.15}],
+     "composition models":[{"model":"uniform", "min depth":82e3, "max depth":670e3, "compositions":[4]}]},
+
+    {"model":"mantle layer", "name":"mantle transition", "coordinates":[[1382.9e3,-1e3],[1530e3,-1e3],[1530e3,1e3],[1382.9e3,1e3]],
+     "temperature models":[{"model":"linear", "min depth":0e3, "max depth":670e3, "top temperature":273.15, "bottom temperature":273.15}],
+     "composition models":[{"model":"uniform", "min depth":[[82e3,[[1382.9e3,0e3]]],[110e3,[[1530e3,0e3]]]], "max depth":670e3,"compositions":[4]}]}
+
+  ]
+}

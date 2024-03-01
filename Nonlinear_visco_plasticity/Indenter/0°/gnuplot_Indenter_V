@@ -1,0 +1,14 @@
+set term eps enhanced
+set output 'app_indenter.eps'
+set xtics 0.1 offset 0,0.5 font 'Helvetic,10'
+set ytics 1 offset 0.5,0 font 'Helvetic,10'
+set ytics add ('{/Helvetic=8 1+{/Symbol p}}' 4.29)
+set grid
+set key top right
+set xlabel offset 0,0.5 '{/Helvetic=12 x|_{y=1}}'
+set ylabel offset 1,0 '{/Helvetic=12 Pressure}'
+plot[0:1][-1:7]\
+'Nodal_Pressure_Rough' t '{/Helvetic=12 Rough punch}' w l lc 'red' lw 3,\
+'Nodal_Pressure_Smooth' t '{/Helvetic=12 Smooth punch}' w l lc 'blue' lw 3,\
+'1.txt' notitle w l lc 'black' dt 2 lw 3,\
+'4.txt' notitle w l lc 'black' dt 3 lw 3

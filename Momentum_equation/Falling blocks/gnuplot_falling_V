@@ -1,0 +1,19 @@
+set term eps enhanced
+set output 'Falling_V.eps'
+set pointsize 0.5
+set xtics 1 offset 0,0.5 font 'Helvetic,12'
+set ytics 2*10**-12 offset 0.5,0 font 'Helvetic,12'
+set grid
+set key top right
+set xlabel offset 0,0.5 '{/Helvetic=14 log_{10}({/Symbol h}_{b}/{/Symbol h}_{f})}'
+set ylabel offset 1,0 '{/Helvetic=14 u_{y}/({/Symbol r}_{b}-{/Symbol r}_{f})}'
+plot[-6:6][-2*10**-12:-1.5*10**-11]\
+'Falling_3300' u 1:($2/100) t '{/Helvetic=12 {/Symbol r}_{b}=3300}' pt 1 lw 3 ps 1.1 w lp,\
+'Falling_3220' u 1:($2/20) t '{/Helvetic=12 {/Symbol r}_{b}=3220}' pt 2 lw 3 ps 1.1,\
+'Falling_6600' u 1:($2/3400) t '{/Helvetic=12 {/Symbol r}_{b}=6600}' pt 4 lw 3 ps 1.1,\
+'Falling_9900' u 1:($2/6700) t '{/Helvetic=12 {/Symbol r}_{b}=9900}' pt 6 lw 3 ps 1.1
+#plot[-6:6][-2*10**9:-15*10**9]\
+#'Falling_3300' u (-$1):((10**21)*$2/100) t '{/Helvetic=12 rho_{b}=3300}' pt 1 w lp,\
+#'Falling_3220' u (-$1):((10**21)*$2/20) t '{/Helvetic=12 rho_{b}=3220}' pt 2,\
+#'Falling_6600' u (-$1):((10**21)*$2/3400) t '{/Helvetic=12 rho_{b}=6600}' pt 4,\
+#'Falling_9900' u (-$1):((10**21)*$2/6700) t '{/Helvetic=12 rho_{b}=9900}' pt 6,\

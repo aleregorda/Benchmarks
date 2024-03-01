@@ -1,0 +1,37 @@
+set term pdf size 10,3 enhanced
+set output '2D_stokes_sphere.pdf'
+set multiplot
+#no_pcg
+set size 0.5, 1
+set origin 0.0, 0
+set log y
+set format y "10^{%L}"
+set title '{/Helvetic=12 Preconditioner type=0}'
+set xtics 50 offset 0,0.5 font 'Helvetic,8'
+set ytics 10 offset 0,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Iterations}'
+set ylabel offset 1,0 '{/Helvetic=10 Normalised residual}'
+plot[0:500][1e-8:1]\
+'./Preconditioned_0/32x32/conv_uzawa_pcg.dat' t '{/Helvetic=10 32x32}' w l,\
+'./Preconditioned_0/64x64/conv_uzawa_pcg.dat' t '{/Helvetic=10 64x64}' w l,\
+'./Preconditioned_0/96x96/conv_uzawa_pcg.dat' t '{/Helvetic=10 96x96}' w l,\
+'./Preconditioned_0/256x256/conv_uzawa_pcg.dat' t '{/Helvetic=10 256x256}' w l
+#pcg=3
+set size 0.5, 1
+set origin 0.5, 0
+set log y
+set title '{/Helvetic=12 Preconditioner type=3}'
+set xtics 50 offset 0,0.5 font 'Helvetic,8'
+set ytics 10 offset 0.5,0 font 'Helvetic,8'
+set grid
+set key top right
+set xlabel offset 0,1 '{/Helvetic=10 Iterations}'
+set ylabel offset 1,0 '{/Helvetic=10 Normalised residual}'
+plot[0:500][1e-8:1]\
+'./Preconditioned_3/32x32/conv_uzawa_pcg.dat' t '{/Helvetic=10 32x32}' w l,\
+'./Preconditioned_3/64x64/conv_uzawa_pcg.dat' t '{/Helvetic=10 64x64}' w l,\
+'./Preconditioned_3/96x96/conv_uzawa_pcg.dat' t '{/Helvetic=10 96x96}' w l,\
+'./Preconditioned_3/256x256/conv_uzawa_pcg.dat' t '{/Helvetic=10 256x256}' w l
+unset multiplot

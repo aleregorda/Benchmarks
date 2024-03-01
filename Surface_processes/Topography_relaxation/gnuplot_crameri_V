@@ -1,0 +1,39 @@
+set term eps size 6,3 enhanced
+set output 'app_topography.eps'
+set pointsize 0.3
+set multiplot
+#GLOBALE
+set size 0.65, 1
+set origin 0.0, 0.0
+set xtics 10 offset 0,0.5 font 'Helvetic,10'
+set xtics add ('{/Helvetic=8 t_{rlx}}' 14.825)
+set ytics 1 offset 0.5,0 font 'Helvetic,10'
+set grid
+set key top right
+set xlabel offset 0,0.5 '{/Helvetic=12 Time (kyr)}'
+set ylabel offset 1,0 '{/Helvetic=12 Max topography (km)}'
+plot[0:100][0:7]\
+'st_18' t '{/Helvetic=10 FALCON_{st}-10^{18} Pa s}' w l lw 2 dt 2,\
+'st_19'  t '{/Helvetic=10 FALCON_{st}-10^{19} Pa s}' w l lw 2 dt 2,\
+'st_20'  t '{/Helvetic=10 FALCON_{st}-10^{20} Pa s}' w l lw 2 dt 2,\
+'Free_Surface'  t '{/Helvetic=10 FALCON_{fs}' w l lw 2,\
+'UNDERWORLD_fs.dat'  t '{/Helvetic=10 UNDERWORLD_{fs}}' w l lw 2,\
+'SULEC_fs.dat'  t '{/Helvetic=10 SULEC_{fs}}' w l lw 2,\
+'UNDERWORLD_fs.dat' u 1:((7)*exp(-$1*(1e3*365*24*3600)*0.2139e-11)) t '{/Helvetic=10 Analytical}' lc 'black' lw 2 w l
+reset
+#ZOOM
+set size 0.4, 1
+set origin 0.6, 0.0
+set xtics 0.5 offset 0,0.5 font 'Helvetic,10'
+set xtics add ('{/Helvetic=8 t_{rlx}}' 14.825)
+set ytics 0.1 offset 0.5,0 font 'Helvetic,10'
+set grid
+set key top right samplen 2
+set xlabel offset 0,0.5 '{/Helvetic=12 Time (kyr)}'
+plot[14:16][2.4:2.8]\
+'st_18' t '{/Helvetic=10 FALCON_{st}-10^{18} Pa s}' w l lt 1 lw 2 dt 2,\
+'Free_Surface'  t '{/Helvetic=10 FALCON_{fs}' w l lt 4 lw 2,\
+'UNDERWORLD_fs.dat'  t '{/Helvetic=10 UNDERWORLD_{fs}}' w l lt 5 lw 2,\
+'SULEC_fs.dat'  t '{/Helvetic=10 SULEC_{fs}}' w l lt 6 lw 2,\
+'UNDERWORLD_fs.dat' u 1:((7)*exp(-$1*(1e3*365*24*3600)*0.2139e-11)) t '{/Helvetic=10 Analytical}' lc 'black' lw 2 w l
+unset multiplot
