@@ -1,0 +1,11 @@
+{
+    "version":"0.5",
+    "coordinate system":{"model":"cartesian"},
+    "cross section":[[0,0],[100,0]],
+    "features":[
+
+    {"model":"continental plate", "name":"continent", "coordinates":[[0e3,-1e0],[1e0,-1e3],[1e0,1e3],[0e0,1e3]],
+     "temperature models":[{"model":"linear", "max depth":1e0, "top temperature":273.15, "bottom temperature":273.15}],
+     "composition models":[{"model":"uniform", "compositions":[1], "max depth":1e0}]}
+
+  ]}
