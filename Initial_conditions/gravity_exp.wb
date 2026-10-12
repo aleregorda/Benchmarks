@@ -1,0 +1,16 @@
+{
+  "version":"0.5",
+  "coordinate system":{"model":"cartesian"},
+  "cross section":[[0,0],[100,0]],
+  "features":
+[
+    {"model":"oceanic plate", "name":"oceanic plate", "coordinates":[[0e0,-1e0],[1e0,-1e0],[1e0,1e0],[0e0,1e0]],
+     "temperature models":[{"model":"linear", "min depth":0e0, "max depth":1e0, "top temperature":1, "bottom temperature":1}],
+     "composition models":[{"model":"uniform", "compositions":[1], "max depth":1e0}]},
+
+     {"model":"oceanic plate", "name":"oceanic plate", "coordinates":[[0.25e0,-1e0],[0.5e0,-1e0],[0.5e0,1e0],[0.25e0,1e0]],
+     "temperature models":[{"model":"linear", "min depth":0e0, "max depth":1e0, "top temperature":1, "bottom temperature":1}],
+     "composition models":[{"model":"uniform", "compositions":[2], "max depth":1e0}]}
+
+  ]
+}

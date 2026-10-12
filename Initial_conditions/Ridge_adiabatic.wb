@@ -1,0 +1,12 @@
+{
+  "version":"0.5",
+  "coordinate system":{"model":"cartesian"},
+  "cross section":[[0,0],[100,0]],
+  "features":
+[
+    {"model":"continental plate", "name":"continental plate", "coordinates":[[0e3,-1e3],[105e3,-1e3],[105e3,1e3],[0e3,1e3]],
+     "temperature models":[{"model":"adiabatic", "min depth":0e3, "max depth":70e3, "thermal expansion coefficient":2e-5, "specific heat":1250, "potential mantle temperature":1000}],
+     "composition models":[{"model":"uniform", "compositions":[1], "max depth":70e3}]}
+
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version":"0.5",
+  "coordinate system":{"model":"cartesian"},
+  "cross section":[[0,0],[100,0]],
+  "features":
+[
+    {"model":"oceanic plate", "name":"oceanic plate", "coordinates":[[0e3,-1e3],[105e3,-1e3],[105e3,1e3],[0e3,1e3]],
+     "temperature models":[{"model":"linear", "min depth":0e3, "max depth":70e3, "top temperature":293, "bottom temperature":1000}],
+     "composition models":[{"model":"uniform", "compositions":[1], "max depth":70e3}]}
+
+  ]
+}
